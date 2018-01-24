@@ -1,0 +1,73 @@
+package inputOutput;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
+public class MiaProvaScrittura {
+		
+	static String t = "C:/Users/UTENTE8/Desktop/IO/prova.txt";
+	static String s = "C:/Users/UTENTE8/Desktop/IO";
+	static String x = "C:/Users/UTENTE8/Desktop/FileCopiato";
+	static File f = new File(s);
+	static File f1 = new File(t);
+	static File f3 = new File(x);
+	
+	public static void copiaFile(File f, File f1) throws IOException {
+		//String x = "C:/Users/UTENTE8/Desktop/FileCopiato";
+		File f2 = f1;
+		//String s1 = "C:/Users/UTENTE8/Desktop/FileCopiato/prova.txt";
+		//File f3 = new File(s1);
+		if(f.exists()) {
+			f2.mkdir();
+		}
+		BufferedReader in = new BufferedReader(new FileReader(f));
+		String s, s2 = new String();
+		while ((s = in.readLine()) != null) {
+			s2 += s + "\n";
+		}
+		FileOutputStream fos = new FileOutputStream(f2);
+		PrintWriter pw = new PrintWriter(fos);
+		pw.println(s2);
+		pw.close();
+		in.close();
+		
+	}
+	
+	public static void creaFile() throws FileNotFoundException {
+				
+		if (!f.isDirectory()) {
+			f.mkdir();
+			if(!f1.exists()) {
+				try {
+					f1.createNewFile();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		FileOutputStream fos = new FileOutputStream(f1);
+		PrintWriter pw = new PrintWriter(fos);
+		pw.write("testo di prova scrittura su file");
+		pw.close();
+		
+	}
+
+	public static void main(String[] args)  {
+		try {
+			creaFile();
+		} catch (FileNotFoundException e) {
+			System.out.println("File inesistente!!");
+		}
+		try {
+			copiaFile(f1, f3);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

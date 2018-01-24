@@ -1,0 +1,19 @@
+package ereditarietà;
+
+public class Uomo {
+	String nome;
+	String sesso;
+	int altezza;
+	
+	public void stampaNome() {
+		System.out.println(nome);
+	}
+	
+	public void stampaSesso() {
+		System.out.println(sesso);
+	}
+	
+	public void stampaAltezza() {
+		System.out.println(altezza);
+	}
+}

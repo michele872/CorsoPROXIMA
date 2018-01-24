@@ -1,0 +1,15 @@
+
+public class Prova {
+
+	public static int main(String[] args) {
+		Prova p = new Prova();
+		System.out.println(p.string());
+		System.out.println("Ciao mondo!");
+		return 0;		
+	}
+	
+	public String string() {
+		return "Ciao";
+	}
+	
+}

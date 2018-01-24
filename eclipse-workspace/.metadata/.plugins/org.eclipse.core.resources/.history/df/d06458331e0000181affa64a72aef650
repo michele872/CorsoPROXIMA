@@ -1,0 +1,37 @@
+package ereditarietà;
+
+import java.util.Scanner;
+
+public class TestEreditarietà {
+
+	public static void main(String[] args) {
+								
+//		Scanner input = new Scanner(System.in);
+//		String nuova = input.nextLine();
+		
+		EssereVivente trota = null;
+		EssereVivente michele = null; 
+		EssereVivente chiuaua = null;
+		
+		if (args[0].equals("a")) {
+			trota = new Pesce();
+		} else if (args[0].equals("b")) {
+			michele = new Uomo();
+		} else if (args.equals("c")) {
+			chiuaua = new Cane();
+		} else {
+			System.out.println("Crea una nuova istanza!!!");
+		}
+		
+		if (trota instanceof Pesce) {
+			System.out.println("Sono un PESCE!!");
+		} else if (michele instanceof Uomo) {
+			System.out.println("Sono un UOMO!!");
+		} else if (chiuaua instanceof Cane) {
+			System.out.println("Sono un CANE!!");
+		}
+			
+		
+	}
+
+}

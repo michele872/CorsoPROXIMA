@@ -1,0 +1,63 @@
+package ereditarietà;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class TestEreditarietà {
+
+	public static void main(String[] args) {
+								
+//		Scanner input = new Scanner(System.in);
+//		String nuova = input.nextLine();
+		Random r = new Random();
+		int scelto = r.nextInt(9);
+		
+		EssereVivente [] arr = new EssereVivente [Integer.parseInt(args[0]) * scelto];
+		
+		
+		
+		
+		
+		for (int i=0; i<arr.length; i++) {
+			int k = r.nextInt(3);
+			if (k == 0) 
+				arr[i] = new Pesce(); 
+			else if (k==1)
+				arr[i] = new Uomo();
+			else if (k==2)
+				arr[i] = new Cane();
+		}
+		
+		for (EssereVivente x : arr) {
+			System.out.println(x.getClass());
+		}
+			
+			
+			
+			
+			
+//		EssereVivente x = null;
+//			
+//			
+//		if (args[1].equals("a")) {
+//			x = new Pesce();
+//		} else if (args[1].equals("b")) {
+//			x = new Uomo();
+//		} else if (args[1].equals("c")) {
+//			x = new Cane();
+//		} else {
+//			System.out.println("Crea una nuova istanza!!!");
+//		}
+//		
+//		if (x instanceof Pesce) {
+//			System.out.println("Sono un PESCE!!");
+//		} else if (x instanceof Uomo) {
+//			System.out.println("Sono un UOMO!!");
+//		} else if (x instanceof Cane) {
+//			System.out.println("Sono un CANE!!");
+//		}
+			
+		
+	}
+
+}

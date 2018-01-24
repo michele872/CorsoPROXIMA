@@ -1,0 +1,6 @@
+package parcheggio;
+
+public class Mia {
+	public int x;
+	
+}

@@ -1,0 +1,29 @@
+package ereditarietà;
+
+import java.util.Scanner;
+
+public class TestEreditarietà {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		String nuova = input.nextLine();
+		
+		EssereVivente trota = null;
+		EssereVivente michele = null; 
+		EssereVivente chiuaua = null;
+		
+		if (nuova.equals("pesce")) {
+			trota = new Pesce();
+		} else if (nuova.equals("uomo")) {
+			michele = new Uomo();
+		} else if (nuova.equals("cane")) {
+			chiuaua = new Cane();
+		} else {
+			System.out.println("Crea un'istanza!!");
+		}
+		
+		System.out.println(michele);
+		
+	}
+
+}

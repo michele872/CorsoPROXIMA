@@ -1,0 +1,11 @@
+package parcheggio;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Automobile auto = new Automobile();
+		Veicolo v1 = new Veicolo();
+		VeicoloAMotore vMotoew = new VeicoloAMotore();
+	}
+
+}

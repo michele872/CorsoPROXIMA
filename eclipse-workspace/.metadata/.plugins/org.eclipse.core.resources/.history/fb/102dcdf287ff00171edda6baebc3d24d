@@ -1,0 +1,19 @@
+package ereditarietà;
+
+public class Cane {
+	String razza;
+	int numOcchi;
+	String tipoPelo;
+	
+	public void stampaRazza() {
+		System.out.println(razza);
+	}
+	
+	public void stampaTipoPelo() {
+		System.out.println(tipoPelo);
+	}
+	
+	public void stampaNumOcchi() {
+		System.out.println(numOcchi);
+	}
+}

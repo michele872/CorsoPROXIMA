@@ -1,0 +1,17 @@
+
+public class Automobile {
+	
+	public int potenza;
+	public int ruote;
+	public int numeroFari = 4;
+	
+	public void giraADestra() {
+		if(numeroFari == 4) {
+			System.out.println("Gira a destra!!");
+		}
+	}
+	
+	public void giraASinistra() {}
+	
+	
+}
