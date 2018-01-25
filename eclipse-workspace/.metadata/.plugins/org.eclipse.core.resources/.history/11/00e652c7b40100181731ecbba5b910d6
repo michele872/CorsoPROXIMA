@@ -1,0 +1,30 @@
+package chatRoom;
+
+import java.io.IOException;
+
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import test.Message;
+
+import rete.TestServerSocket;
+
+public class clientSocket {
+
+	public static final int SERVER_SOCKET_PORT = 8053;
+	
+	public static void main(String[] args) throws UnknownHostException, IOException {
+		Message m = new Message();
+		m.setTextMessage("Ciao");
+		String message = m.getTextMessage();
+		Socket client = new Socket("mercurio", TestServerSocket.SERVER_SOCKET_PORT);
+		OutputStream os = client.getOutputStream();
+		ObjectOutputStream oos = new ObjectOutputStream(os);
+		//oos.writeObject("Ciao!!!");
+		oos.writeObject(message);
+		os.close();
+		oos.close();
+	}
+
+}

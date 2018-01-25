@@ -1,0 +1,10 @@
+package rete2;
+
+public class NuovoClientSocket {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
