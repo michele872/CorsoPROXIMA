@@ -1,0 +1,25 @@
+package serializzazione;
+
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import test.Message;
+
+public class SerializeTest implements Serializable {
+
+	public void serializeTest() throws Exception {
+		Message mex = new Message();
+		
+		FileOutputStream fos = null;
+		fos = new FileOutputStream("C:/koapòksdjgklsd.txt");
+		ObjectOutputStream oos;
+		oos = new ObjectOutputStream(fos);
+		oos.writeObject(mex);
+		oos.close();
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+
+}
