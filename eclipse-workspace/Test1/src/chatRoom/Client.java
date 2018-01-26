@@ -11,7 +11,7 @@ import test.Message;
 
 public class Client {
 
-		private static final int PORT = 8057;
+		private static final int PORT = 8050;
 		
 		public static void main(String[] args) throws Exception {
 			messaggio();		
@@ -22,29 +22,25 @@ public class Client {
 			while(true) {	
 			Scanner in = new Scanner(System.in);
 			Message m = new Message();
-			System.out.println("Inserisci USERNAME!!");
+
+			System.out.print("Utente: ");
 			m.setUsername(in.nextLine());
-			System.out.println("Inserisci MESSAGGIO!!");
+			System.out.print("Messaggio: ");
 			m.setTextMessage(in.nextLine());
 			
-			Socket client = new Socket("mercurio", PORT);
+			Socket client = new Socket("localhost", PORT);
 			OutputStream os = client.getOutputStream();
 			ObjectOutputStream oos = new ObjectOutputStream(os);			
 			oos.writeObject(m);
-			//oos.reset();
-//			os.close();
-//			oos.close();
-			System.out.println("Messaggio inviato");
+			//System.out.println("Messaggio inviato");
 			
 			Message m1 = new Message();
 			InputStream is = client.getInputStream();
 			ObjectInputStream ois = new ObjectInputStream(is);
 			m1 = (Message) ois.readObject();
-			System.out.println("**********  ECCO IL TUO MESSAGGIO **********");
-			//System.out.println("");
-			System.out.println(m1.getUsername() + " - " + m1.getTextMessage());
-			//System.out.println("");
-			System.out.println("######################################################");
+			System.out.println("*********************************************");
+			System.out.println("Utente "+m1.getUsername() + " - "+ "Messaggio: " + m1.getTextMessage());
+			System.out.println("*********************************************");
 			
 			os.close();
 			oos.close();

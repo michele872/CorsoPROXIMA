@@ -25,8 +25,8 @@ public static final int SERVER_SOCKET_PORT = 8050;
 				System.out.println("");
 				System.out.println("");
 				System.out.println("");
-				System.out.println("######################################################################");
-				System.out.println("##### SERVER HOSTNAME/IP: " + address + " READY ######");
+				System.out.println("#####################################################################");
+				System.out.println("####### SERVER HOSTNAME/IP: " + address + " READY #######");
 				System.out.println("Server socket started. Listening to port: " + SERVER_SOCKET_PORT);
 				
 				while(true) {

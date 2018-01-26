@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
 
+import serializzazione.SerializeTest;
 import test.Message;
 
 	public class Connect extends Thread{
@@ -34,6 +35,13 @@ import test.Message;
 				OutputStream os = client.getOutputStream();
 				ObjectOutputStream oos = new ObjectOutputStream(os);
 				oos.writeObject(messaggioCorrente);
+				
+				//SerializeTest.creaFile(messaggioCorrente);
+				SerializeTest.serialize(messaggioCorrente);
+				//System.out.println("Messaggio serializzato");
+				SerializeTest.deserialize(messaggioCorrente);
+				//System.out.println("Messaggio deserializzato");
+			
 				
 			} catch(Exception e) {
 				e.printStackTrace();

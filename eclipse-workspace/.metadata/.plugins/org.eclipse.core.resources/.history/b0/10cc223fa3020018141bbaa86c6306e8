@@ -1,0 +1,14 @@
+package serializzazione;
+
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.Date;
+
+public class TimeStep {
+	
+	public static String dataCorrente() {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy 'at' HH:mm:ss"); 
+		String data = dateFormat.format(new Date());
+		return data;		
+	}
+}

@@ -1,0 +1,8 @@
+package serializzazione;
+
+import java.time.LocalDateTime;
+
+public class TimeStep {
+	
+//	LocalDateTime data = Da	
+}
