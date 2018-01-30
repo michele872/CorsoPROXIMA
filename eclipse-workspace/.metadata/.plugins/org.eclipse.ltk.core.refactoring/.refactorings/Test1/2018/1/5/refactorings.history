@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;ConnectDB.java&apos; to &apos;Test1/src/DataBase&apos;&#x0D;&#x0A;- Original project: &apos;Test1&apos;&#x0D;&#x0A;- Destination element: &apos;Test1/src/DataBase&apos;&#x0D;&#x0A;- Original element: &apos;chatRoom.ConnectDB.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;DataBase" element1="/src&lt;chatRoom{ConnectDB.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1517318675392" units="1" version="1.0"/>
+</session>

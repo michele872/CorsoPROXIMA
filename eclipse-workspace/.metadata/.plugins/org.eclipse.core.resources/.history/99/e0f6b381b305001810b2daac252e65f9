@@ -1,0 +1,12 @@
+package chatRoom;
+
+public class ConnectDB {
+
+	public static void main(String[] args) {
+		// driver di tipo "bridge jdbc-odbc"
+		String driver = "com.mysql.jdbc.Driver";
+		Class.forName(driver);		// C'è quel driver nel classPath?? Se non c'è parte l'eccezione. 
+		
+	}
+
+}

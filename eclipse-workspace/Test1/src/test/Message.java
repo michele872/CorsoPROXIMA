@@ -9,6 +9,9 @@ public class Message implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String username;
 	private String textMessage;
+	private String lastTimeActive = null;
+	
+	
 	
 //	public Message() {};
 //	
@@ -17,6 +20,12 @@ public class Message implements Serializable {
 //		this.textMessage = textMessage;
 //	}
 	
+	public String getLastTimeActive() {
+		return lastTimeActive;
+	}
+	public void setLastTimeActive(String lastTimeActive) {
+		this.lastTimeActive = lastTimeActive;
+	}
 	public String getUsername() {
 		return username;
 	}

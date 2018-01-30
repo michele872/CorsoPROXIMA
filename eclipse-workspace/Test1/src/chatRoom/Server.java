@@ -18,8 +18,10 @@ public static final int SERVER_SOCKET_PORT = 8050;
 		ServerSocket server = new ServerSocket(SERVER_SOCKET_PORT);
 		InetAddress address = InetAddress.getLocalHost();
 		System.out.println("##### SERVER HOSTNAME/IP: "+ address + " #####");
-		InputStream is = null;
-		ObjectInputStream ois = null;
+		
+//		InputStream is = null;    					 // Li ho già dichiarati in Connect
+//		ObjectInputStream ois = null;
+		
 		while(true) {
 			try {
 				System.out.println("");
@@ -38,14 +40,19 @@ public static final int SERVER_SOCKET_PORT = 8050;
 				e.printStackTrace();
 			}finally {
 				try {
-					is.close();
+					server.close();
 				} catch (Exception e) {
-					e.getMessage();
-				} try {
-					ois.close();
-				} catch (Exception e) {
-					e.getMessage();
+					e.printStackTrace();
 				}
+//				try {
+//					is.close();
+//				} catch (Exception e) {
+//					e.getMessage();
+//				} try {
+//					ois.close();
+//				} catch (Exception e) {
+//					e.getMessage();
+//				}
 			}
 		}
 	}
