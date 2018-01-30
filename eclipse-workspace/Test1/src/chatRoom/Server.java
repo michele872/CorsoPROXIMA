@@ -1,7 +1,5 @@
 package chatRoom;
 
-import java.io.InputStream;
-import java.io.ObjectInputStream;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -12,6 +10,7 @@ import test.Message;
 public class Server {
 
 public static final int SERVER_SOCKET_PORT = 8050;
+public static final int SERVER_SOCKET_PORT2 = 8055;
 	
 	public static void main(String[] args) throws Exception {
 		Message m = new Message();
@@ -44,15 +43,6 @@ public static final int SERVER_SOCKET_PORT = 8050;
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-//				try {
-//					is.close();
-//				} catch (Exception e) {
-//					e.getMessage();
-//				} try {
-//					ois.close();
-//				} catch (Exception e) {
-//					e.getMessage();
-//				}
 			}
 		}
 	}

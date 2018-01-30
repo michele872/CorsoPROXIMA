@@ -1,0 +1,7 @@
+package chatRoom;
+
+import java.io.Serializable;
+
+public class MessagesRequest implements Serializable {
+
+}
