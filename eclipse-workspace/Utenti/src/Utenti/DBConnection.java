@@ -1,6 +1,7 @@
-package test;
+package Utenti;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,16 +11,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class TestServlet
+ * Servlet implementation class DBConnection
  */
-@WebServlet("/TestServlet")
-public class TestServlet extends HttpServlet {
+@WebServlet("/DBConnection")
+public class DBConnection extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public TestServlet() {
+    public DBConnection() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,15 +30,24 @@ public class TestServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println(request.getParameter("username"));  // richiedo al server i parametri inseriti e caricati con login
-		System.out.println(request.getParameter("password"));  // e li stampo in console..
-		String luca = request.getParameter("username");
-		response.getWriter().append("Ciao a tutti.....---> Served at: ").append(request.getContextPath());
-		response.getWriter().append(luca).append(request.getContextPath());
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		String destination = "/ok.html";
-		RequestDispatcher rDispatcher = getServletContext().getRequestDispatcher(destination);
-		rDispatcher.forward(request, response); 		//Smista l'html
+		DBConnectionClass db = new DBConnectionClass(request.getParameter("username"), request.getParameter("password"));
+		
+		try {
+			if(db.login()) {
+				String destination = "/ok.html";
+				RequestDispatcher rDispatcher = getServletContext().getRequestDispatcher(destination);
+				rDispatcher.forward(request, response);
+			} else {
+				String destination = "/ko.html";
+				RequestDispatcher rDispatcher = getServletContext().getRequestDispatcher(destination);
+				rDispatcher.forward(request, response);
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
