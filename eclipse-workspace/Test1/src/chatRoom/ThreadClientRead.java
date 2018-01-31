@@ -40,7 +40,7 @@ public class ThreadClientRead extends Thread {
 				}
 				
 				for (Message m : message) {
-					System.out.format("UserName: %-15s Messaggio: %-15s data: %-10s \n", m.getUsername(), m.getTextMessage(), m.getLastTimeActive());
+					System.out.format("UserName: %-15s Messaggio: %-20s data: %-10s \n", m.getUsername(), m.getTextMessage(), m.getLastTimeActive());
 					//System.out.println(m.getUsername()+ " " + m.getTextMessage() + " "+ m.getLastTimeActive() );
 				}
 				

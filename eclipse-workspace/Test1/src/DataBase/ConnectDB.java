@@ -3,6 +3,7 @@ package DataBase;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -44,10 +45,19 @@ public class ConnectDB {
 //			System.out.println("r: " + r);
 		
 		//METODO DELETEs
-		String delite = "DELETE FROM testDBtable WHERE nome = 'Fabrizio' ";
-		int del = cmd.executeUpdate(delite);
-			System.out.println("r: " + del);
+//		String delite = "DELETE FROM testDBtable WHERE nome = 'Fabrizio' ";
+//		int del = cmd.executeUpdate(delite);
+//			System.out.println("r: " + del);
 			
+		String query5 = "SELECT nome FROM testDBtable WHERE cognome = ?";
+		PreparedStatement pStatement = con.prepareStatement(query5);
+			String s = "test";
+			pStatement.setString(1, s);
+		ResultSet res = pStatement.executeQuery();
+		while(res.next()) {
+			System.out.println(res.getString("nome"));
+		}
+		
 		//res2.close();
 		cmd.close();
 		con.close();
