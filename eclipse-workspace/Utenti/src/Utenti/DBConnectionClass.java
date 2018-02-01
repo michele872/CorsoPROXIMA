@@ -14,10 +14,10 @@ public class DBConnectionClass {
 	}
 	
 	public boolean login() throws ClassNotFoundException, SQLException {
-		ConnessDB cdb = new ConnessDB();
-		cdb.connetti();
-		if (email != null && password != null)
-			login = true;
+//		ConnessDB cdb = new ConnessDB();
+//		cdb.connetti();
+//		if (email != null && password != null)
+//			login = true;
 		return login;
 	}
 }
