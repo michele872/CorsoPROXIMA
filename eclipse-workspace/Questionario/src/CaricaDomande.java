@@ -24,11 +24,11 @@ public class CaricaDomande {
 		Connection con = DriverManager.getConnection(url, "testuser", "testuser");
 		Statement cmd = con.createStatement(); 
 		
-		String query = "SELECT (domande, risposta1, risposta2, risposta3) FROM utente";
+		String query = "SELECT domande, risposta1, risposta2, risposta3 FROM utente";
 		ResultSet res = cmd.executeQuery(query);
 		
 		while(res.next()) {
-			cd.add(new CaricaDomande("domande", "risposta1", "risposta2", "risposta3"));
+			cd.add(new CaricaDomande(res.getString("domande"), res.getString("risposta1"), res.getString("risposta2"),res.getString("risposta3")));
 		}
 		return cd;
 	}
