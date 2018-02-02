@@ -1,3 +1,4 @@
+<%@page import="JSP.CaricaDomande"%>
 <%@ page import="java.util.Arrays" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -10,14 +11,17 @@
 <body>
 <%
 	int size = (Integer) session.getAttribute("size");
-
-
+	int giuste = 0;
 	for (int i=0; i<size; i++) {
-	String[] risp = (String[]) request.getParameterValues("risp"+(i+1));
-	
-	System.out.println(Arrays.toString(risp));
+		String[] corretta = (String[]) session.getAttribute("corretta"+(i+1));
+		String[] risp = (String[]) request.getParameterValues("risp"+(i+1));	
+		
+			if(risp != null && Arrays.equals(risp, corretta)) {
+				giuste++;
+			}
 	}
+	System.out.print(giuste);
 %>
-	CIAO
+
 </body>
 </html>

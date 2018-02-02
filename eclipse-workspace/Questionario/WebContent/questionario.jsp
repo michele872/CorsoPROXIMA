@@ -13,10 +13,12 @@
 <% 
 
 	ArrayList<CaricaDomande> domande = CaricaDomande.caricaDomanda();
+	
 	session.setAttribute("size", domande.size());
 	int i = 1;
 
 	for(CaricaDomande s : domande) {
+		session.setAttribute("corretta"+ String.valueOf(i),s.rispCorretta);
 		out.print(s.domande);
 		
 		%> <br> <%

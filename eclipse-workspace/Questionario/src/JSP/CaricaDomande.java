@@ -9,14 +9,20 @@ import java.util.ArrayList;
 public class CaricaDomande {
 	public String domande; 
 	public String[] risposte;
+	public String[] rispCorretta;
+	
+	public CaricaDomande() {
+		
+	}
 	
 	public CaricaDomande(String d) {
 		this.domande = d;
 	}
 	
-	public CaricaDomande(String d, String r []) {
+	public CaricaDomande(String d, String r [], String[] rC) {
 		this.domande = d;
 		this.risposte = r;
+		this.rispCorretta = rC;
 	}
 	
 	public static ArrayList<CaricaDomande> caricaDomanda() throws ClassNotFoundException, SQLException {
@@ -28,12 +34,12 @@ public class CaricaDomande {
 		Connection con = DriverManager.getConnection(url, "testuser", "testuser");
 		Statement cmd = con.createStatement(); 
 		
-		String query = "SELECT domande, risposte FROM utente";
+		String query = "SELECT domande, risposte, rispCorrette FROM utente";
 		ResultSet res = cmd.executeQuery(query);
 		
 		while(res.next()) {
 			
-			cd.add(new CaricaDomande(res.getString("domande"), res.getString("risposte").split("-"))); // passo le domande + un array fatto da risposte
+			cd.add(new CaricaDomande(res.getString("domande"), res.getString("risposte").split("-"), res.getString("rispCorrette").split("-"))); // passo le domande + un array fatto da risposte
 		}
 		return cd;
 	}
