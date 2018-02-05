@@ -39,7 +39,7 @@ public class CaricaDomande {
 		
 		while(res.next()) {
 			
-			cd.add(new CaricaDomande(res.getString("domande"), res.getString("risposte").split("-"), res.getString("rispCorrette").split("-"))); // passo le domande + un array fatto da risposte
+			cd.add(new CaricaDomande(res.getString("domande"), res.getString("risposte").split(" - "), res.getString("rispCorrette").split("-"))); // passo le domande + un array fatto da risposte
 		}
 		return cd;
 	}

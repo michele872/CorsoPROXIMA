@@ -12,16 +12,28 @@
 <%
 	int size = (Integer) session.getAttribute("size");
 	int giuste = 0;
+	String[] corretta = new String[size];
+	String[] risp = new String[size];
 	for (int i=0; i<size; i++) {
-		String[] corretta = (String[]) session.getAttribute("corretta"+(i+1));
-		String[] risp = (String[]) request.getParameterValues("risp"+(i+1));	
+		corretta = (String[]) session.getAttribute("corretta"+i);
+		risp = (String[]) request.getParameterValues("risp"+i);	
+		
+		System.out.println("A" + Arrays.toString(corretta));
+		System.out.println("B" + Arrays.toString(risp));
 		
 			if(risp != null && Arrays.equals(risp, corretta)) {
 				giuste++;
 			}
 	}
+	
 	System.out.print(giuste);
 %>
+RISPOSTE CORRETTE:
+<% out.println(giuste); %>
+
+<form action="questionario.jsp">
+	<input type="submit" name="reload" value="Riprova!!!">
+</form>
 
 </body>
 </html>

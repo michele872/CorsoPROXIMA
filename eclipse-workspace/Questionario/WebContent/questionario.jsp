@@ -15,15 +15,15 @@
 	ArrayList<CaricaDomande> domande = CaricaDomande.caricaDomanda();
 	
 	session.setAttribute("size", domande.size());
-	int i = 1;
-
+	int i = 0;
+	
 	for(CaricaDomande s : domande) {
 		session.setAttribute("corretta"+ String.valueOf(i),s.rispCorretta);
 		out.print(s.domande);
 		
 		%> <br> <%
 		for(String r: s.risposte) {
-		out.print("<input type='checkbox' name='risp" + String.valueOf(i) + "' value='" + String.valueOf(r) +"' >" + r);
+		out.print("<input type='checkbox' name='risp" + String.valueOf(i) + "' value='" + r +"' >" + r);
 		%> <br> <%
 		} 		
 		i++;
@@ -32,6 +32,8 @@
 %>
 		<input type="submit" value="RISPONDI">
 </form>
+
+
 		
 
 </body>
