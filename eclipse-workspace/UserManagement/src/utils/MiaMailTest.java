@@ -5,9 +5,9 @@ public class MiaMailTest {
 	import javax.mail.*;
 	import javax.mail.internet.*;
 	import java.util.*;
+	
 	 
-	public void inviaMail(String recipients[], String subject, String message , String from) throws MessagingException
-	{
+	public void inviaMail(String recipients[], String subject, String message , String from) throws MessagingException {
 	  boolean debug = false;
 	 
 	  // Impostazioni SMTP
@@ -27,8 +27,7 @@ public class MiaMailTest {
 	 
 	  // Destinatari
 	  InternetAddress[] addressTo = new InternetAddress[recipients.length]; 
-	  for (int i = 0; i < recipients.length; i++)
-	  {
+	  for (int i = 0; i < recipients.length; i++) {
 	    addressTo[i] = new InternetAddress(recipients[i]);
 	  }
 	  msg.setRecipients(Message.RecipientType.TO, addressTo);

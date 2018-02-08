@@ -28,11 +28,11 @@ public class UserDBManager {
 	    Class.forName(driver);
 	    //DEFINISCO url, username e password
 //	    System.out.println("//DEFINISCO url, username e password");
-	    String url = "jdbc:mysql://localhost:3306/testDB";
+	    String url = "jdbc:mysql://mercurio:3306/testDB";
 	    String username = "test3" ;
 	    String password = "test3" ;
         //stabilisco la connessione
-		con = DriverManager.getConnection (url, username, password);
+		con = DriverManager.getConnection (url, username, password);		
 	}
 	
 	public static void closeConnection () throws Exception {
