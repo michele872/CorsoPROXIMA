@@ -1,3 +1,4 @@
+<%@ page import= "test.Message" %>
 <%@page import="chat.ThreadClientRead"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -15,7 +16,9 @@
 	<div>
 		<div>
 			<form action="">
-				<input type="text" value="<% %>" >
+				<input type="text" value="<% ) {
+					System.out.format("UserName: %-15s Messaggio: %-20s data: %-10s \n", m.getUsername(), m.getTextMessage(), m.getLastTimeActive());
+				}%>" >
 			</form>
 		</div>
 	</div>

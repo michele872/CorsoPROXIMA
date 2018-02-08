@@ -1,11 +1,8 @@
 INDEX VERSION 1.130+C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\.metadata\.plugins\org.eclipse.jdt.core
-3110629313.index
 3443811267.index
-267801838.index
-1322007205.index
-2020437910.index
-4005953615.index
-1205824980.index
-411305955.index
-507933310.index
-553041143.index
+4269828476.index
+1266826202.index
+3798365787.index
+152040776.index
+3110629313.index
+3955660400.index

@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
 externalMigrateFromAuthorizationDatabase/isMigrated=true
 migrateFromAuthorizationDatabase/isMigrated=true
+repositories/406939b0d50c001819b6ddf88a42f4c0=406939b0d50c001819b6ddf88a42f4c0;https\://svn.code.sf.net/p/mauriziofranco/code/StartingWithMavenAndJUnit/trunk;https\://svn.code.sf.net/p/mauriziofranco/code/StartingWithMavenAndJUnit/trunk;branches;tags;trunk;true;788d0d1a-1ee3-4a46-ad72-5569ca951e8d;https\://svn.code.sf.net/p/mauriziofranco/code;;false;;;0
+repositories/501ebc1cb30c00181e42e0cdbcf37e35=501ebc1cb30c00181e42e0cdbcf37e35;https\://svn.code.sf.net/p/testyourcourse/code/2018_01_Milano(via_Eraclito)_Proxima/UserManagement/trunk;https\://svn.code.sf.net/p/testyourcourse/code/2018_01_Milano(via_Eraclito)_Proxima/UserManagement/trunk;branches;tags;trunk;true;c69d72a2-1bd0-4bb2-8561-2966808bf839;https\://svn.code.sf.net/p/testyourcourse/code;;false;;;0
 repositories/c0ee1f24640a00181940a0dc986a102a=c0ee1f24640a00181940a0dc986a102a;https\://svn.code.sf.net/p/testyourcourse/code/2018_01_Milano(via_Eraclito)_Proxima/JavaTests;https\://svn.code.sf.net/p/testyourcourse/code/2018_01_Milano(via_Eraclito)_Proxima/JavaTests;branches;tags;trunk;true;c69d72a2-1bd0-4bb2-8561-2966808bf839;https\://svn.code.sf.net/p/testyourcourse/code;;false;;;0
