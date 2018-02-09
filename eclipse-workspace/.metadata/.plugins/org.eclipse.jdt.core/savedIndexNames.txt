@@ -1,5 +1,4 @@
 INDEX VERSION 1.130+C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\.metadata\.plugins\org.eclipse.jdt.core
-3443811267.index
 3874896045.index
 3798365787.index
 1212842173.index
