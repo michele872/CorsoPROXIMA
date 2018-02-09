@@ -15,16 +15,18 @@ WELCOLME UTENTE
 	int giorno = Integer.parseInt(CurrentDate.giornoCorrente());
 	
 	int contatore = 0;
-	for(int i=0; i<28-giorno; i++) {
+	for(int i=0; i<giorno; i++) {
 
 		//out.print("Data <input type='text' name='giorno"+i+ "' value='0' style='width:150px;' >");
+		out.print("ID <input type='text' name='text"+i+ "' value='0' style='width:30px;' >");
 		out.print("Data <input type='text' name='giorno"+i+ "' value='"+String.valueOf(giorno+contatore)+"-"+meseAnno+"'  style='width:150px;' readonly='readonly'> ");
-		out.print("Ore  Lavorate <input type='text' name='orario"+i+ "' value='0' style='width:30px;' >");
-		contatore++;
+		out.print("Ore  Lavorate <input type='text' name='orario"+i+ "' value='0' style='width:40px;' >");
+		contatore--;
 		%> <br> <%
 	}
 	
 	%>	
+	<br>
 	<input type="submit" value="CARICA">
 </form>		
 	

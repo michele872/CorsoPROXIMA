@@ -32,7 +32,7 @@ public class AfterHome extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		//int giorno = 0;
+		int id = 0;
 		String giorno = "";
 		int orario = 0;
 		
@@ -42,14 +42,15 @@ public class AfterHome extends HttpServlet {
 //			String giorno = request.getParameter("giorno"+i);
 //			String orario = request.getParameter("orario"+i);
 			try {	
+				id = Integer.parseInt(request.getParameter("id"+i));
 				giorno = request.getParameter("giorno"+i);
 				orario = Integer.parseInt(request.getParameter("orario"+i));
-				System.out.println(giorno + " " + orario);
+				System.out.println(id+ " "+giorno + " " + orario);
 			if(orario == 0) {
 			//if((giorno == null) && (orario == 0)) {
 				continue;
 			} else {		
-					day.insertDb(giorno, orario);
+					day.insertDb(id, giorno, orario);
 			}
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
