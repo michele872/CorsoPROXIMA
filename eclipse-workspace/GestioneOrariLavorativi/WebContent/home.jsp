@@ -22,14 +22,14 @@ WELCOLME UTENTE
 	String meseAnno = CurrentDate.dataCorrente();
 	int giorno = Integer.parseInt(CurrentDate.giornoCorrente());
 	int orario = 0;
-
+	String data = CurrentDate.data();
 	HashMap<String, Integer> o = cdb.getPrepopolatedValue();
 	
 	
 	int contatore = 1;
 	for(int i=0; i<giorno; i++) {	
-		orario = o.get(id+(contatore+"-"+meseAnno));
-		
+		orario = o.get(id+"_"+(contatore+"-"+meseAnno));
+		System.out.println("home.jsp - chiave: " + id+"_"+(contatore+meseAnno) + " valore: " + orario);
 			//out.print("Data <input type='text' name='giorno"+i+ "' value='0' style='width:150px;' >");
 			out.print("<input type='hidden' value='1' >");
 			out.print("Data <input type='text' name='giorno"+i+ "' value='"+String.valueOf(contatore)+"-"+meseAnno+"'  style='width:150px;' readonly='readonly'> ");

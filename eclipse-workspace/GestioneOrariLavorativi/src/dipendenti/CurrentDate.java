@@ -5,6 +5,12 @@ import java.time.format.DateTimeFormatter;
 
 public class CurrentDate {
 	
+	public static String data() {
+		LocalDateTime data = LocalDateTime.now();
+		String dataAttuale = data.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+		return dataAttuale;
+	}
+	
 	public static String dataCorrente() {
 		LocalDateTime data = LocalDateTime.now();
 		String dataAttuale = data.format(DateTimeFormatter.ofPattern("MM-yyyy"));

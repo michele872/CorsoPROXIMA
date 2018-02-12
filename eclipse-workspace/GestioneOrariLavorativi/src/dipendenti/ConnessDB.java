@@ -69,13 +69,14 @@ public class ConnessDB {
 	public HashMap<String, Integer> getPrepopolatedValue () throws ClassNotFoundException, SQLException {
 		ArrayList<Dipendente> dip = selectDb();
 		HashMap<String, Integer> valori = new HashMap<>();
-		int size = valori.size();
-		
-		for(int i=0; i<size; i++) {
-			valori.put(dip.get(i).getId()+dip.get(i).getData(), dip.get(i).getOra());
-			System.out.println(valori.get(dip.get(i).getId()+dip.get(i).getData()));
+
+		int sizeDip = dip.size();
+		for(int i=0; i<sizeDip; i++) {
+			valori.put(dip.get(i).getId()+"_"+dip.get(i).getData(), dip.get(i).getOra());
+			System.out.println("chiave: " + dip.get(i).getId()+"_"+dip.get(i).getData() + " valore: " + valori.get(dip.get(i).getId()+dip.get(i).getData()));
 		}
-		System.out.println(size);
+		System.out.println("Questa è la size dell'ArrayList: " + sizeDip);
+		System.out.println("Size dell'HashMap: " + valori.size());
 		return valori;
 	} 
 	
@@ -86,10 +87,10 @@ public class ConnessDB {
 		//System.out.println("Inserimento effettuato");
 //		cdb.updateDb("12-02-2018", 8);
 //		System.out.println("UPDATE effettuato");
-		for (Dipendente d : cdb.selectDb()) {
-			System.out.println(d.getOra());
-		}
-		
+//		for (Dipendente d : cdb.selectDb()) {
+//			System.out.println(d.getOra());
+//		}
+		cdb.getPrepopolatedValue();
 	}
 	
 }
