@@ -18,7 +18,7 @@ public class CurrentDate {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(CurrentDate.giornoCorrente());
+		System.out.print(CurrentDate.giornoCorrente()+"-");
 		System.out.println(CurrentDate.dataCorrente());
 	}
 

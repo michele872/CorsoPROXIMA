@@ -34,23 +34,24 @@ public class AfterHome extends HttpServlet {
 		
 		//int id = 0;
 		String giorno = "";
-		int orario = 0;
+		String orario = "";
+		int id = 0;
 		
 		ConnessDB day = new ConnessDB();
 		
 		for(int i=0; i<28; i++) {
-//			String giorno = request.getParameter("giorno"+i);
-//			String orario = request.getParameter("orario"+i);
 			try {	
-				//id = Integer.parseInt(request.getParameter("id"+i));
+				id = 1;
 				giorno = request.getParameter("giorno"+i);
-				orario = Integer.parseInt(request.getParameter("orario"+i));
-				System.out.println(giorno + " " + orario);
-			if(orario == 0) {
-			//if((giorno == null) && (orario == 0)) {
+				orario = request.getParameter("orario"+i);
+				//orario = Integer.parseInt(request.getParameter("orario"+i));
+//				System.out.println(giorno + " " + orario);
+			if(orario == null) {
 				continue;
-			} else {		
-					day.insertDb(giorno, orario);
+			} else if (orario != null) {
+					int ora = Integer.parseInt(orario);
+					day.updateDb(giorno, ora);
+					day.insertDb(id, giorno, ora);
 			}
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
