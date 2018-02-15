@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import db.SpendTimeDBManager;
+
 /**
  * Servlet implementation class AfterHome
  */
@@ -37,7 +39,7 @@ public class AfterHome extends HttpServlet {
 		String orario = "";
 		int id = 0;
 		
-		ConnessDB day = new ConnessDB();
+		SpendTimeDBManager day = new SpendTimeDBManager();
 		
 		for(int i=0; i<28; i++) {
 			try {	

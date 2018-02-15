@@ -1,7 +1,8 @@
+<%@page import="db.SpendTimeDBManager"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
-<%@page import="dipendenti.ConnessDB"%>
+<%@page import="db.SpendTimeDBManager"%>
 <%@ page import="dipendenti.CurrentDate" %>
 <%@ page import="dipendenti.Dipendente" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -34,7 +35,9 @@
 <div class="col-md-6 col-md-offset-3">
           <table class="table table-striped">
 	<%
-	ConnessDB cdb = new ConnessDB();	
+	SpendTimeDBManager cdb = new SpendTimeDBManager();
+	
+	
 	
 	int id = 1;
 	String meseAnno = CurrentDate.dataCorrente();
@@ -57,7 +60,7 @@
 			%> 
 
             <tbody>          
-          <tr>
+          	<tr>
 			<td> <% 
 			out.print("Data <input type='text' name='giorno"+i+ "' value='"+String.valueOf(contatore)+"-"+meseAnno+"'  style='width:150px;' readonly='readonly'> ");
 			//out.print("Ore  Lavorate <input type='text' name='orario"+i+ "' value='0' style='width:40px;' >");
@@ -67,7 +70,7 @@
 			out.print("Ore  Lavorate <input type='text' name='orario"+i+ "' value='"+orario+"' style='width:40px;' >");
 			%>
 			</td>
-              </tr>
+            </tr>
 
 			<%
 			contatore++;

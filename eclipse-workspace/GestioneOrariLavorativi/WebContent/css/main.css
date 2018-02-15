@@ -3,3 +3,7 @@
 body{
 	background-color: #D3D3D3;
 }
+	
+	.alert {
+		<strong>Success!</strong> Indicates a successful or positive action.;
+	}
