@@ -11,10 +11,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>HOME</title>
+
+   <!-- Bootstrap core CSS -->
+    <link href="http://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<style type="text/css">
+		
+	</style>
 </head>
 <body>
-WELCOLME UTENTE
+<div class="container">
+<div class="col-md-6 col-md-offset-3">
+<table>
+<tr>
+<td align="center">
+<h3>WELCOME LUCAAAA </h3>
+</td>
+</tr>
+</table>
+</div>
 <form action="AfterHome">
+<div class="col-md-6 col-md-offset-3">
+          <table class="table table-striped">
 	<%
 	ConnessDB cdb = new ConnessDB();	
 	
@@ -36,18 +54,34 @@ WELCOLME UTENTE
 		System.out.println("home.jsp - chiave: " + id+"_"+(contatore+"-"+meseAnno) + " valore: " + orario);
 			//out.print("Data <input type='text' name='giorno"+i+ "' value='0' style='width:150px;' >");
 			out.print("<input type='hidden' value='1' >");
+			%> 
+
+            <tbody>          
+          <tr>
+			<td> <% 
 			out.print("Data <input type='text' name='giorno"+i+ "' value='"+String.valueOf(contatore)+"-"+meseAnno+"'  style='width:150px;' readonly='readonly'> ");
 			//out.print("Ore  Lavorate <input type='text' name='orario"+i+ "' value='0' style='width:40px;' >");
+			%>
+			<td>
+			<% 
 			out.print("Ore  Lavorate <input type='text' name='orario"+i+ "' value='"+orario+"' style='width:40px;' >");
+			%>
+			</td>
+              </tr>
+
+			<%
 			contatore++;
 
-			%> <br> <%
 	}
 	
 	%>	
-	<br>
-	<input type="submit" value="CARICA">
+  </tbody>
+          </table>
+          	
+          	<button type="submit" style="display: block; margin: 0 auto; width: 100px;" class="btn btn-default">CARICA</button>
+        </div>
+      
 </form>		
-	
+</div>
 </body>
 </html>

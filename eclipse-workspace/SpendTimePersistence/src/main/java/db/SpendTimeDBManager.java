@@ -37,6 +37,39 @@ public class SpendTimeDBManager {
 		check = true;
 		}
 	
+	public static int selectByOra(String giorno) throws ClassNotFoundException, SQLException {
+		int ora = 0;
+		String driver = "com.mysql.jdbc.Driver";
+		Class.forName(driver);		
+		String url = "jdbc:mysql://localhost:3306/dipendenti";
+		Connection con = DriverManager.getConnection(url,"testuser","testuser");
+		Statement cmd = con.createStatement();
+		
+		String query = "SELECT ora FROM dipendente WHERE data = "+" '"+giorno+"'";
+		ResultSet res = cmd.executeQuery(query);
+		while(res.next()) {
+			ora = res.getInt(1);
+			//System.out.println(ora);
+		}
+		return ora;
+	}
+	
+	public void updateDb(String giorno, int ora) throws ClassNotFoundException, SQLException {
+		//boolean verifica = false;
+		String driver = "com.mysql.jdbc.Driver";
+		Class.forName(driver);		
+		String url = "jdbc:mysql://localhost:3306/dipendenti";
+		Connection con = DriverManager.getConnection(url,"testuser","testuser");
+		//Statement cmd = con.createStatement();
+		
+		String query = "Update dipendente SET ora="+ora+" WHERE data= '"+giorno+"'";
+		PreparedStatement ps = con.prepareStatement(query);
+
+		ps.executeUpdate();
+		//verifica = true;
+		//return verifica;
+	}
+	
 	public ArrayList<SpendTime> selectDb() throws ClassNotFoundException, SQLException {
 		ArrayList<SpendTime> dip = new ArrayList<SpendTime>();
 		String driver = "com.mysql.jdbc.Driver";
@@ -56,6 +89,7 @@ public class SpendTimeDBManager {
 		return dip;		
 	}
 	
+	
 	public HashMap<String, Integer> getPrepopolatedValue () throws ClassNotFoundException, SQLException {
 		ArrayList<SpendTime> dip = selectDb();
 		HashMap<String, Integer> valori = new HashMap<String, Integer>();
@@ -63,40 +97,13 @@ public class SpendTimeDBManager {
 		int sizeDip = dip.size();
 		for(int i=0; i<sizeDip; i++) {
 			valori.put(dip.get(i).getId()+"_"+dip.get(i).getData(), dip.get(i).getOra());
-			System.out.println("chiave: " + dip.get(i).getId()+"_"+dip.get(i).getData() + " valore: " + valori.get(dip.get(i).getId()+dip.get(i).getData()));
+			System.out.println("chiave: " + dip.get(i).getId()+"_"+dip.get(i).getData() + " valore: " + valori.get(dip.get(i).getId()+"_"+dip.get(i).getData()));
 		}
 		System.out.println("Questa è la size dell'ArrayList: " + sizeDip);
 		System.out.println("Size dell'HashMap: " + valori.size());
 		return valori;
 	} 
 	
-	
-	
-	public static int insertDip(SpendTime st) throws Exception {
-
-		String driver = "com.mysql.jdbc.Driver";
-		Class.forName(driver);
-	
-		String url = "jdbc:mysql://localhost:3306/dipendenti";
-		Connection con = DriverManager.getConnection(url,"testuser","testuser");
-		int rows = 0;
-		String query = "INSERT INTO dipendente (id, data, ora) VALUES (?,?,?)";
-		PreparedStatement pStatement = con.prepareStatement(query);
-
-		pStatement.setInt(1, st.getId());
-		pStatement.setString(2, st.getData());
-		pStatement.setInt(3, st.getOra());
-		
-
-		try {
-			rows = pStatement.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		pStatement.close();
-
-		return rows;
-	}
 	
 	public static int deleteAll() {
 		int rows = 0;
@@ -121,8 +128,10 @@ public class SpendTimeDBManager {
 		return rows;
 	}
 	
-	public static void main(String[] args) throws Exception {
-		
-		SpendTimeDBManager.insertDip(new SpendTime(1, "15-02-2018", 8));
-	}
+//	public static void main(String[] args) throws Exception {
+//		SpendTimeDBManager sp = new SpendTimeDBManager();
+//		sp.insertDb(1, "16-02-2018", 4);
+//		System.out.println("Inserimento andato a MINKIA");
+//		System.out.println(SpendTimeDBManager.selectByOra("14-02-2018"));
+//	}
 }

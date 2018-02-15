@@ -1,9 +1,7 @@
 package db;
 
 import static org.junit.Assert.assertTrue;
-
 import java.sql.SQLException;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,10 +10,6 @@ public class SpendTimeDBManagerInsertTest {
 	
 	@Test
 	public void test1_insertDip() throws ClassNotFoundException, SQLException {
-//		SpendTime st = new SpendTime();
-//		st.setId(1);
-//		st.setData("14-02-2015");
-//		st.setOra(6);
 		SpendTimeDBManager sp = new SpendTimeDBManager();
 		int rows = 0;
 

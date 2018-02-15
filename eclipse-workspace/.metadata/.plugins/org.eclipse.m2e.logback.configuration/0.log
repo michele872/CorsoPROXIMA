@@ -1568,3 +1568,217 @@ org.eclipse.jdt.core.JavaModelException: com/exercises/parkomatic [in Parkomatic
 2018-02-14 16:50:35,136 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2018-02-14 16:50:35,143 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2018-02-14 16:50:35,143 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-14 16:50:37,787 [Worker-187] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence
+2018-02-14 16:50:37,787 [Worker-187] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B test
+2018-02-14 16:53:57,188 [Worker-190] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-14 16:53:57,188 [Worker-190] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-02-14 16:53:57,195 [Worker-190] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-14 16:53:57,201 [Worker-190] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-14 16:53:57,210 [Worker-190] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-14 16:53:57,210 [Worker-190] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\testJPA\src\main\resources
+2018-02-14 16:53:57,215 [Worker-190] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-14 16:53:57,215 [Worker-190] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\testJPA\src\test\resources
+2018-02-14 16:54:10,007 [Worker-189] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence
+2018-02-14 16:54:10,007 [Worker-189] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B test
+2018-02-15 10:01:11,376 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-02-15 10:06:13,692 [Worker-6] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence
+2018-02-15 10:06:13,693 [Worker-6] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B test
+2018-02-15 10:10:41,362 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:10:41,375 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 10:10:41,380 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:10:41,380 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 10:10:58,485 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:10:58,586 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 10:10:58,588 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:10:58,589 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 10:12:12,266 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:12:12,266 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-02-15 10:12:12,267 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:12:12,268 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 10:12:26,625 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:12:26,629 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-02-15 10:12:26,630 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:12:26,630 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 10:12:31,267 [Worker-22] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence
+2018-02-15 10:12:31,273 [Worker-22] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B test
+2018-02-15 10:15:56,790 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:15:56,797 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 10:15:56,806 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:15:56,814 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 10:16:04,315 [Worker-21] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence
+2018-02-15 10:16:04,315 [Worker-21] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B test
+2018-02-15 10:16:57,149 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:16:57,156 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-02-15 10:16:57,163 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:16:57,169 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 10:17:09,654 [Worker-29] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence
+2018-02-15 10:17:09,659 [Worker-29] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B test
+2018-02-15 10:18:29,691 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:18:29,697 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-02-15 10:18:29,704 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:18:29,710 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 10:19:19,927 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:19:19,927 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 10:19:19,929 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:19:19,934 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 10:22:30,358 [Worker-31] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence
+2018-02-15 10:22:30,365 [Worker-31] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B test
+2018-02-15 10:38:39,587 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:38:39,673 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 10:38:39,678 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:38:39,682 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 10:41:25,893 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:41:25,894 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 10:41:25,911 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:41:25,917 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 10:54:35,773 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:54:35,779 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-02-15 10:54:35,785 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:54:35,789 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 10:55:14,422 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:55:14,426 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-02-15 10:55:14,431 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:55:14,435 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 10:55:18,737 [Worker-47] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence
+2018-02-15 10:55:18,741 [Worker-47] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B test
+2018-02-15 10:58:04,694 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:58:04,699 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-02-15 10:58:04,705 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 10:58:04,709 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:08:38,577 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:08:38,578 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:08:38,580 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:08:38,586 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:09:08,329 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:09:08,351 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:09:08,359 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:09:08,371 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:09:20,499 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:09:20,499 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:09:20,502 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:09:20,506 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:10:00,565 [Worker-59] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence
+2018-02-15 11:10:00,571 [Worker-59] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B test
+2018-02-15 11:13:17,795 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:13:17,796 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:13:17,801 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:13:17,805 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:14:10,517 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:14:10,522 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:14:10,527 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:14:10,532 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:19:15,062 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:19:15,067 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:19:15,073 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:19:15,077 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:19:22,525 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:19:22,534 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:19:22,543 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:19:22,549 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:19:39,833 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:19:39,838 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:19:39,844 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:19:39,848 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:19:47,415 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:19:47,422 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:19:47,427 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:19:47,431 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:20:10,079 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:20:10,091 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:20:10,098 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:20:10,102 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:21:28,471 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:21:28,475 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:21:28,480 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:21:28,484 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:21:54,723 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:21:54,727 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:21:54,732 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:21:54,736 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:22:01,287 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:22:01,300 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:22:01,314 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:22:01,321 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:22:15,404 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:22:15,410 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:22:15,414 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:22:15,418 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:22:22,466 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:22:22,470 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:22:22,474 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:22:22,478 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:23:26,929 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:23:26,936 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:23:26,942 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:23:26,946 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:23:46,103 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:23:46,108 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:23:46,113 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:23:46,117 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:24:28,172 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:24:28,177 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:24:28,181 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:24:28,185 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:24:40,905 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:24:40,909 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:24:40,914 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:24:40,919 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:24:50,544 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:24:50,552 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:24:50,561 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:24:50,568 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:30:32,158 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:30:32,164 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-02-15 11:30:32,169 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:30:32,173 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:30:36,628 [Worker-65] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence
+2018-02-15 11:30:36,632 [Worker-65] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B test
+2018-02-15 11:31:37,860 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:31:37,864 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-02-15 11:31:37,869 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:31:37,874 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:31:40,181 [Worker-64] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence
+2018-02-15 11:31:40,181 [Worker-64] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B test
+2018-02-15 11:33:18,144 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:33:18,152 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-02-15 11:33:18,158 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:33:18,164 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:33:19,830 [Worker-64] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence
+2018-02-15 11:33:19,835 [Worker-64] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B test
+2018-02-15 11:34:59,834 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:34:59,839 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:34:59,844 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:34:59,848 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:35:34,636 [Worker-68] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence
+2018-02-15 11:35:34,636 [Worker-68] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B test
+2018-02-15 11:40:00,695 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:40:00,700 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-02-15 11:40:00,705 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:40:00,709 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:40:05,884 [Worker-64] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence
+2018-02-15 11:40:05,889 [Worker-64] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B test
+2018-02-15 11:43:39,566 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:43:39,566 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:43:39,571 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:43:39,575 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 11:44:45,980 [Worker-73] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence
+2018-02-15 11:44:45,980 [Worker-73] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B clean install
+2018-02-15 11:45:02,457 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:45:02,461 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-02-15 11:45:02,466 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 11:45:02,470 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
+2018-02-15 14:08:05,673 [Worker-118] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.proximainformatica:PersistenceUsers:0.0.1-SNAPSHOT @ C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\UserManagementPersistence2Checkout\pom.xml.
+2018-02-15 14:08:06,628 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 14:08:06,661 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2018-02-15 14:08:06,700 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 14:08:06,700 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\UserManagementPersistence2Checkout\src\test\resources
+2018-02-15 14:08:07,317 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 14:08:07,318 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2018-02-15 14:08:07,334 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 14:08:07,335 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\UserManagementPersistence2Checkout\src\test\resources
+2018-02-15 14:40:05,834 [Worker-124] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence
+2018-02-15 14:40:05,835 [Worker-124] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B test
+2018-02-15 14:51:03,806 [Worker-133] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 14:51:03,807 [Worker-133] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-02-15 14:51:03,828 [Worker-133] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-02-15 14:51:03,832 [Worker-133] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\SpendTimePersistence\src\test\resources
