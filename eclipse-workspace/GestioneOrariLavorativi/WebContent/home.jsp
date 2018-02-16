@@ -82,8 +82,7 @@
           </table>
           	
           	<button type="submit" style="display: block; margin: 0 auto; width: 100px;" class="btn btn-default">CARICA</button>
-        </div>
-      
+        </div> 
 </form>		
 </div>
 </body>

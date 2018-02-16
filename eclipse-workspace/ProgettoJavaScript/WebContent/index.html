@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>LOGIN</title>
+<script type="text/javascript">
+
+
+
+	function ciao() {
+		console.log('sono nel submit');
+		var emailValue = document.getElementById("email").value;
+		var passwordValue = document.getElementById("password").value;
+		if((validateEmail(emailValue)) | (validatePassword(passwordValue))) {
+			document.getElementById("form").action="ok.html";
+			document.getElementById("form").submit();;
+		}
+		console.log(emailValue);
+		console.log(passwordValue);
+		
+	}
+	
+	function validateEmail(emailValue){
+		console.log("validazione email");
+		var check = false;
+		if((emailValue == null) || ((emailValue.length > 100) || (emailValue.length == 0))) {
+			document.getElementById("erroreEmail").style.display = 'block';
+			check = false;
+		} else {
+			document.getElementById("erroreEmail").style.display = 'none';
+			check = true;
+		}
+		return check;
+	}
+	
+	function validatePassword(passwordValue){
+		console.log("validazione password");
+		var check = false;
+		if((passwordValue == null) || ((passwordValue.length > 50)|| (passwordValue.length == 0))) {
+			document.getElementById("errorePassword").style.display = 'block';
+			check = false;
+		} else {
+			document.getElementById("errorePassword").style.display = 'none';
+			check = true;
+		}
+		return check;
+	}
+
+</script>
+</head>
+<body>	
+
+<form id="form">
+	<br>
+	<label>USERNAME</label>
+	<input id="email" type="text" name="user" value="" /><br><br>
+	<label id="erroreEmail" style="color: red; display:none;">Errore MAIL troppo corta. CHIAMA LUCA</label>
+	<label>PASSWORD</label>
+	<input id="password" type="text" name="pass" value="" /><br><br>
+	<label id="errorePassword" style="color: red; display:none;">Errore PASSWORD</label>
+	<input type="button" value="CLICCAMI" onclick="ciao();" />
+</form>
+</body>
+</html>

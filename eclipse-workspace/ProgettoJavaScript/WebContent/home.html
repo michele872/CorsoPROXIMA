@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		function submitForm() {
+			console.log("HI LUCAAA...")
+			var emailValue = document.getElementById("email").value;	//chiamo l'INPUT TYPE tramite ID definito da qualche parte 
+			//.value mi torna il valore dell'elemento che ha quell'id
+			console.log(emailValue);   // per eventuali errori
+			var validation = validateForm(emailValue);
+			if(!validateForm(emailValue)) {
+				return;
+			} 
+			document.getElementById("loginForm").action="ok.html";
+			document.getElementById("loginForm").submit();
+		}
+		
+		function validateForm(emailValue) {
+			var validationCheck = false ;
+			if((emailValue == null) || (emailValue == 0)) {
+				document.getElementById("emailErrorMessage").style.display = "block";
+				validatioCheck = false;
+			} else {
+				document.getElementById("emailErrorMessage").style.display = "none";
+				validatioCheck = true;
+			}
+		}
+		function printAlert() {
+			//alert("LUCA è COTONATISSIMO");
+			alert("LUCAAAAAAAAAAAAAA")
+		}
+	</script>
+</head>
+<body>
+<form action="ok.html">
+	<br>
+<!-- 	<label>USERNAME</label> -->
+	<input type="text" name="user" value="" style="background: red" id="email"><br><br>
+	<label id="emailErrorMessage" style="color: red; display:none">Il campo email non è corretto </label>
+<!-- 	<label>PASSWORD</label> -->
+	<input type="text" name="pass" value=""><br><br>
+	
+	<input type="button" onclick="submitForm();"  value="CLICCAMI">
+</form>
+</body>
+</html>

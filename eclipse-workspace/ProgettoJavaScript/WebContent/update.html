@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	var currentUser = {
+		firstName: "John",
+		lastName: "Doe",
+		age: 50,
+		birthDate:"12-10.1979"
+	};
+	
+</script>
+</head>
+<body>
+YES
+	<form action="ok.html" id="loginForm">
+	<script> 
+		document.write("<input type='text' name='firstName' value='"+currentUser.firstName+"' id='firstName'>")		
+	</script>
+	<label id="emailErrorMessage" style="color: red; display: none"></label><br>
+	<script type="text/javascript">
+		document.write("<input type='text' name='lastName' value='"+currentUser.lastName+"' id='lastName'>")
+	</script>
+		<label id="emailErrorMessage" style="color: red; display: none"></label><br>
+		<script type="text/javascript">
+			document.write("<input type='text' name='age' value='"+currentUser.age+"' id='age'>")
+		</script>
+		<label id="emailErrorMessage" style="color: red; display: none"></label><br>	
+		<script type="text/javascript">
+			document.write("<input type='text' name='birthDate' value='"+currentUser.birthDate+"' id='birthDate'>")
+		</script>
+		<label id="emailErrorMessage" style="color: red; display: none"></label><br>
+		
+	</form>
+</body>
+</html>

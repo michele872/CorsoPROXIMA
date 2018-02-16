@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+var currentUser = {
+		firstName: "John",
+		lastName: "Doe",
+		age: 50,
+		birthDate:"12-10.1979"
+	};
+	
+	var currentUser1 = {
+			firstName: "John",
+			lastName: "Doe",
+			age: 50,
+			birthDate:"12-10.1979"
+		};
+	
+	var currentUser2 = {
+			firstName: "John",
+			lastName: "Doe",
+			age: 50,
+			birthDate:"12-10.1979"
+		};
+	
+	var users = [currentUser, currentUser1, currentUser2];
+	
+</script>
+</head>
+<body>
+	<ul>
+		<script>
+			var usersize = users.length;
+			console.log("usersize");
+			for(var i=0; i<usersize; i++) {
+				document.write("<li>"+users[i].firstName+ "<br>" +users[i].lastName +"<br>"+users[i].age+"<br>"+users[i].birthDate+"<br>"+"</li>")
+			}
+		</script>
+	</ul>
+</body>
+</html>
