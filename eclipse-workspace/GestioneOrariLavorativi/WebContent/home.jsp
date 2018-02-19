@@ -3,7 +3,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@page import="db.SpendTimeDBManager"%>
-<%@ page import="dipendenti.CurrentDate" %>
+<%@ page import="utility.CurrentDate" %>
 <%@ page import="dipendenti.Dipendente" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -19,6 +19,20 @@
 	<style type="text/css">
 		
 	</style>
+	<script type="text/javascript">
+	
+	function controllaspeciali(campo){
+		re=/[&><"']/;
+		if(re.test(campo.value)) {
+			document.getElementById("error").style.display = 'block';
+// 			document.getElementById("form").onChange;
+// 			alert("hai inserito un carattere non valido")}
+		}	
+	
+		function toEight() {
+			
+		}
+	</script>
 </head>
 <body>
 <div class="container">
@@ -51,7 +65,9 @@
 	for(int i=0; i<giorno; i++) {	
 		if(o.isEmpty()){
 			orario = 0;
-		} else {
+		} 
+		
+		else {
 			orario = o.get(id+"_"+(contatore+"-"+meseAnno));
 		}
 		System.out.println("home.jsp - chiave: " + id+"_"+(contatore+"-"+meseAnno) + " valore: " + orario);
@@ -62,13 +78,16 @@
             <tbody>          
           	<tr>
 			<td> <% 
-			out.print("Data <input type='text' name='giorno"+i+ "' value='"+String.valueOf(contatore)+"-"+meseAnno+"'  style='width:150px;' readonly='readonly'> ");
+			out.print("Data <input type='text' name='giorno"+i+ "' value='"+String.valueOf(contatore)+"-"+meseAnno+"'  style='width:150px;' readonly='readonly' /> ");
 			//out.print("Ore  Lavorate <input type='text' name='orario"+i+ "' value='0' style='width:40px;' >");
 			%>
 			<td>
 			<% 
-			out.print("Ore  Lavorate <input type='text' name='orario"+i+ "' value='"+orario+"' style='width:40px;' >");
-			%>
+			out.print("Ore  Lavorate <input type='text' name='orario"+i+ "' value='"+orario+"' style='width:40px;'  onChange='controllaspeciali(this)' />");
+			%> 
+			</td>
+			<td>
+			<label id="error" style="color: red; display:none;">CARATTERE INSERITO NON VALIDO.</label>
 			</td>
             </tr>
 

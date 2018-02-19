@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import db.SpendTimeDBManager;
+import utility.CurrentDate;
 
 /**
  * Servlet implementation class AfterHome
@@ -41,7 +42,9 @@ public class AfterHome extends HttpServlet {
 		
 		SpendTimeDBManager day = new SpendTimeDBManager();
 		
-		for(int i=0; i<28; i++) {
+		int max = Integer.parseInt(CurrentDate.giornoCorrente());
+		
+		for(int i=0; i< max ; i++) {
 			try {	
 				id = 1;
 				giorno = request.getParameter("giorno"+i);

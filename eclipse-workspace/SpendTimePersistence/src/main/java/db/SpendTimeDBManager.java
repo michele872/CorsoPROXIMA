@@ -9,7 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import bean.SpendTime;
+import utility.CurrentDate;
+
 
 public class SpendTimeDBManager {
 	int giorno, ora;
@@ -95,9 +96,18 @@ public class SpendTimeDBManager {
 		HashMap<String, Integer> valori = new HashMap<String, Integer>();
 
 		int sizeDip = dip.size();
+		int giorno = Integer.parseInt(CurrentDate.giornoCorrente());
+		if( sizeDip < giorno ) {
+			for(int i=sizeDip; i< giorno; i++ ) {
+				insertDb(dip.get(0).getId(), (i+1)+"-"+CurrentDate.dataCorrente(), 0);
+			}
+		}
+		dip = selectDb();
+		sizeDip = dip.size();
+		
 		for(int i=0; i<sizeDip; i++) {
 			valori.put(dip.get(i).getId()+"_"+dip.get(i).getData(), dip.get(i).getOra());
-			System.out.println("chiave: " + dip.get(i).getId()+"_"+dip.get(i).getData() + " valore: " + valori.get(dip.get(i).getId()+"_"+dip.get(i).getData()));
+			System.out.println("chiave: " + dip.get(i).getId()+"_"+dip.get(i).getData() + " valore: " + valori.get(dip.get(i).getId()+dip.get(i).getData()));
 		}
 		System.out.println("Questa è la size dell'ArrayList: " + sizeDip);
 		System.out.println("Size dell'HashMap: " + valori.size());

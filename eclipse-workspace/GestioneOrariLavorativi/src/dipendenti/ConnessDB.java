@@ -71,6 +71,15 @@ public class ConnessDB {
 //		HashMap<String, Integer> valori = new HashMap<>();
 //
 //		int sizeDip = dip.size();
+//		int giorno = Integer.parseInt(CurrentDate.giornoCorrente());
+//		if( sizeDip < giorno ) {
+//			for(int i=sizeDip; i< giorno; i++ ) {
+//				insertDb(1, (i+1)+"-"+CurrentDate.dataCorrente(), 0);
+//			}
+//		}
+//		dip = selectDb();
+//		sizeDip = dip.size();
+//		
 //		for(int i=0; i<sizeDip; i++) {
 //			valori.put(dip.get(i).getId()+"_"+dip.get(i).getData(), dip.get(i).getOra());
 //			System.out.println("chiave: " + dip.get(i).getId()+"_"+dip.get(i).getData() + " valore: " + valori.get(dip.get(i).getId()+dip.get(i).getData()));
