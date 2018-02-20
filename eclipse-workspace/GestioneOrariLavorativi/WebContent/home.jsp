@@ -26,12 +26,10 @@
 		if(re.test(campo.value)) {
 			document.getElementById("error").style.display = 'block';
 // 			document.getElementById("form").onChange;
-// 			alert("hai inserito un carattere non valido")}
-		}	
-	
-		function toEight() {
-			
+// 			alert("hai inserito un carattere non valido")
 		}
+	}
+
 	</script>
 </head>
 <body>

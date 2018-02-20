@@ -9,10 +9,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.apache.log4j.Logger;
+
 import utility.CurrentDate;
 
 
 public class SpendTimeDBManager {
+	
+	final static Logger logger = Logger.getLogger(SpendTimeDBManager.class);
+	
 	int giorno, ora;
 	public boolean check = false;;
 	
@@ -22,7 +27,7 @@ public class SpendTimeDBManager {
 	
 		String url = "jdbc:mysql://localhost:3306/dipendenti";
 		Connection con = DriverManager.getConnection(url,"testuser","testuser");
-		String query = "INSERT INTO dipendente (id, data, ora) VALUES (?,?,?)";
+		String query = "INSERT INTO spendtime (id, data, ora) VALUES (?,?,?)";
 		PreparedStatement ps  = con.prepareStatement(query);
 		ps.setInt(1, id);
 		ps.setString(2, giorno);
@@ -31,8 +36,7 @@ public class SpendTimeDBManager {
 		try {
 			ps.executeUpdate();
 			} catch (SQLException s) {
-				s.getMessage();
-				s.printStackTrace();
+				logger.error(s.getMessage());
 			}
 		// Se l'inserimento va a buon fine CHECK diventa true
 		check = true;
@@ -46,11 +50,11 @@ public class SpendTimeDBManager {
 		Connection con = DriverManager.getConnection(url,"testuser","testuser");
 		Statement cmd = con.createStatement();
 		
-		String query = "SELECT ora FROM dipendente WHERE data = "+" '"+giorno+"'";
+		String query = "SELECT ora FROM spendtime WHERE data = "+" '"+giorno+"'";
 		ResultSet res = cmd.executeQuery(query);
 		while(res.next()) {
 			ora = res.getInt(1);
-			//System.out.println(ora);
+			logger.debug(ora);
 		}
 		return ora;
 	}
@@ -63,7 +67,7 @@ public class SpendTimeDBManager {
 		Connection con = DriverManager.getConnection(url,"testuser","testuser");
 		//Statement cmd = con.createStatement();
 		
-		String query = "Update dipendente SET ora="+ora+" WHERE data= '"+giorno+"'";
+		String query = "Update spendtime SET ora="+ora+" WHERE data= '"+giorno+"'";
 		PreparedStatement ps = con.prepareStatement(query);
 
 		ps.executeUpdate();
@@ -79,14 +83,14 @@ public class SpendTimeDBManager {
 		Connection con = DriverManager.getConnection(url,"testuser","testuser");
 		Statement cmd = con.createStatement();
 		
-		String query = "SELECT * FROM dipendente";
+		String query = "SELECT * FROM spendtime";
 		ResultSet res = cmd.executeQuery(query);
 		
 		while(res.next()) {
-			System.out.println(res.getString(2));
+			logger.debug(res.getString(2));
 			dip.add(new SpendTime(res.getInt(1), res.getString(2), res.getInt(3)));
 		}
-		System.out.println(dip.size());
+		logger.debug(dip.size());
 		return dip;		
 	}
 	
@@ -107,10 +111,10 @@ public class SpendTimeDBManager {
 		
 		for(int i=0; i<sizeDip; i++) {
 			valori.put(dip.get(i).getId()+"_"+dip.get(i).getData(), dip.get(i).getOra());
-			System.out.println("chiave: " + dip.get(i).getId()+"_"+dip.get(i).getData() + " valore: " + valori.get(dip.get(i).getId()+dip.get(i).getData()));
+			logger.debug("chiave: " + dip.get(i).getId()+"_"+dip.get(i).getData() + " valore: " + valori.get(dip.get(i).getId()+dip.get(i).getData()));
 		}
-		System.out.println("Questa è la size dell'ArrayList: " + sizeDip);
-		System.out.println("Size dell'HashMap: " + valori.size());
+		logger.debug("Questa è la size dell'ArrayList: " + sizeDip);
+		logger.debug("Size dell'HashMap: " + valori.size());
 		return valori;
 	} 
 	
@@ -124,14 +128,14 @@ public class SpendTimeDBManager {
 		
 			String url = "jdbc:mysql://localhost:3306/dipendenti";
 			Connection con = DriverManager.getConnection(url,"testuser","testuser");
-			String query = "delete from dipendente;";
+			String query = "delete from spendtime;";
 			Statement cmd = con.createStatement();
 
 			rows = cmd.executeUpdate(query);
 			cmd.close();
-			System.out.println("Deleted rows: " + rows);
+			logger.error("Deleted rows: " + rows);
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			logger.error(e.getMessage());
 			e.printStackTrace();
 		}
 
@@ -141,7 +145,6 @@ public class SpendTimeDBManager {
 //	public static void main(String[] args) throws Exception {
 //		SpendTimeDBManager sp = new SpendTimeDBManager();
 //		sp.insertDb(1, "16-02-2018", 4);
-//		System.out.println("Inserimento andato a MINKIA");
-//		System.out.println(SpendTimeDBManager.selectByOra("14-02-2018"));
+//		logger.debug(SpendTimeDBManager.selectByOra("14-02-2018"));
 //	}
 }
