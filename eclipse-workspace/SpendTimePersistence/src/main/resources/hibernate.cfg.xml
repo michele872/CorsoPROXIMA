@@ -10,7 +10,8 @@
     <property name="hibernate.connection.username">testuser</property>
     <property name="hibernate.connection.password">testuser</property>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-    <mapping class="org.entities.User"/>   
+    <mapping class="org.entities.Spendtime"/>   
+    <mapping class="org.entities.Spendtimetip"/>   
   </session-factory>
   
 </hibernate-configuration>

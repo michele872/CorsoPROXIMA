@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sun.media.jfxmedia.logging.Logger;
+
 import db.SpendTimeDBManager;
 import utility.CurrentDate;
 
@@ -40,8 +42,6 @@ public class AfterHome extends HttpServlet {
 		String orario = "";
 		int id = 0;
 		
-		SpendTimeDBManager day = new SpendTimeDBManager();
-		
 		int max = Integer.parseInt(CurrentDate.giornoCorrente());
 		
 		for(int i=0; i< max ; i++) {
@@ -55,18 +55,20 @@ public class AfterHome extends HttpServlet {
 				continue;
 			} else if (orario != null) {
 					int ora = Integer.parseInt(orario);
-					day.updateDb(giorno, ora);
-					day.insertDb(id, giorno, ora);
+					SpendTimeDBManager.updateDb(giorno, ora);
+					SpendTimeDBManager.insertDb(id, giorno, ora);
 			}
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			} catch (SQLException e) {
 				e.printStackTrace();
+			} catch (Exception e) {
+				e.printStackTrace();
 			} 	
 		
 		}
 		
-		if(day.check == true) {
+		if(SpendTimeDBManager.check == true) {
 			String destination = "/ok.html";
 			RequestDispatcher rDispatcher = getServletContext().getRequestDispatcher(destination);
 			rDispatcher.forward(request, response);

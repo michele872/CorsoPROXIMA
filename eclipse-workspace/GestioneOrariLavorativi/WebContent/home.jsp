@@ -1,10 +1,9 @@
 <%@page import="db.SpendTimeDBManager"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
-<%@page import="db.SpendTimeDBManager"%>
 <%@ page import="utility.CurrentDate" %>
-<%@ page import="dipendenti.Dipendente" %>
+<%@ page import="db.SpendTime" %>
+<%@ page import="utility.CurrentDate" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -47,16 +46,13 @@
 <div class="col-md-6 col-md-offset-3">
           <table class="table table-striped">
 	<%
-	SpendTimeDBManager cdb = new SpendTimeDBManager();
-	
-	
-	
+		
 	int id = 1;
 	String meseAnno = CurrentDate.dataCorrente();
 	int giorno = Integer.parseInt(CurrentDate.giornoCorrente());
 	int orario;
 	String data = CurrentDate.data();
-	HashMap<String, Integer> o = cdb.getPrepopolatedValue();
+	HashMap<String, Integer> o = SpendTimeDBManager.getPrepopolatedValue();
 	
 	
 	int contatore = 1;
