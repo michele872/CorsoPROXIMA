@@ -20,6 +20,8 @@ public class Spendtime implements Serializable {
 
 	private int ora;
 
+	private int userID;
+
 	//bi-directional many-to-one association to Spendtimetip
 	@ManyToOne
 	@JoinColumn(name="tipoOre")
@@ -50,6 +52,14 @@ public class Spendtime implements Serializable {
 
 	public void setOra(int ora) {
 		this.ora = ora;
+	}
+
+	public int getUserID() {
+		return this.userID;
+	}
+
+	public void setUserID(int userID) {
+		this.userID = userID;
 	}
 
 	public Spendtimetip getSpendtimetip() {

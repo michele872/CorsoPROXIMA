@@ -1,7 +1,7 @@
 package db;
 
 import static org.junit.Assert.assertTrue;
-import java.sql.SQLException;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,19 +9,18 @@ import org.junit.Test;
 public class SpendTimeDBManagerInsertTest {
 	
 	@Test
-	public void test1_insertDip() throws ClassNotFoundException, SQLException {
-		SpendTimeDBManager sp = new SpendTimeDBManager();
+	public void test1_insertDip() throws Exception {
 		int rows = 0;
 
-			sp.insertDb(1, "14-02-2018", 7);
-			if(sp.check == true) {
+		SpendTimeDBManager.insertDb(1, "14-02-2018", 7);
+			if(SpendTimeDBManager.check == true) {
 				rows = 1;
 			}
 		System.out.println("@Before --> inserted rows number: " + rows);
 		System.out.println("#########");
 		System.out.println("TEST INSERT DIP");
 		System.out.println("#########");
-		System.out.println(sp.getPrepopolatedValue());
+		System.out.println(SpendTimeDBManager.getPrepopolatedValue());
 		assertTrue(rows == 1);
 	}
 	

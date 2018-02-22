@@ -1,0 +1,269 @@
+package db;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+
+import org.apache.log4j.Logger;
+import org.entities.Spendtime;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+public class TestHibrenate {
+	
+	final static Logger logger = Logger.getLogger(TestHibrenate.class);
+	
+	static Session session;
+	static Transaction transaction;
+	static Spendtime spend;
+	
+	public static void insert(int userID, String data, int ora) {
+		session = DbManagerHibernate.getSessionFactory().openSession();
+		session.beginTransaction();
+		spend.setUserID(userID);
+		spend.setData(data);
+		spend.setOra(ora);
+		session.save(spend);
+		session.getTransaction().commit();
+		session.close();
+		System.out.println("sessione chiusa");
+	}
+	
+	//******************SELECT * FROM Spendtime;******************
+	public static List<Spendtime> select() {
+		session = DbManagerHibernate.getSessionFactory().openSession();
+		transaction  = session.beginTransaction();
+		List<Spendtime> sp = null;
+		try {
+			sp = session.createQuery("FROM Spendtime").list();
+			transaction.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+//			session.disconnect();
+//			session.close();
+		}
+		return sp;
+		
+	}
+	
+	
+//****************** SELECT id FROM Spendtime; ******************
+	public static List<Integer> selectId() {
+		session = DbManagerHibernate.getSessionFactory().openSession();
+	    transaction = session.beginTransaction();
+	    
+	    List<Integer> spend = null;
+	    
+	    try {
+	         CriteriaBuilder builder = session.getCriteriaBuilder();
+	         CriteriaQuery<Integer> query = builder.createQuery(Integer.class);
+	         Root<Spendtime> root = query.from(Spendtime.class);
+	         query.select(root.get("id"));
+	         Query<Integer> q=session.createQuery(query);
+	         spend = q.getResultList();
+//	         for (Integer i : spend) {
+//	            System.out.println(i);
+//	         }
+	         transaction.commit();
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	         if (transaction != null) {
+	            transaction.rollback();
+	         }
+	      }
+		return spend;
+	}
+	
+	
+	//****************** SELECT * FROM Spendtime WHERE ID = 1; ******************
+	public static List<Spendtime> selectByUserID(int userID) {
+		session = DbManagerHibernate.getSessionFactory().openSession();
+	    transaction = session.beginTransaction();
+	    
+	    List<Spendtime> byId = null;
+	    
+	    try {
+	         CriteriaBuilder builder = session.getCriteriaBuilder();
+	         CriteriaQuery<Spendtime> query = builder.createQuery(Spendtime.class);
+	         Root<Spendtime> root = query.from(Spendtime.class);
+	         query.select(root).where(builder.equal(root.get("userID"), userID));
+	         Query<Spendtime> q=session.createQuery(query);
+	         byId = q.getResultList();
+	         System.out.println("**** SIZE:   " + byId.size());
+	         transaction.commit();
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	         if (transaction != null) {
+	            transaction.rollback();
+	         }
+	      }
+		return byId;
+	}
+	
+	
+	//******************* SELECT ORA WHERE UserId = .. , data = .... ********************
+	public static ArrayList<Spendtime> selectUserIDandData(int userID, String data) {
+		session = DbManagerHibernate.getSessionFactory().openSession();
+
+	    ArrayList<Spendtime> ora = null;
+	    try {
+	         CriteriaBuilder builder = session.getCriteriaBuilder();
+	         CriteriaQuery<Spendtime> query = builder.createQuery(Spendtime.class);
+	         Root<Spendtime> root = query.from(Spendtime.class);
+	         
+	         query.select(root).where(
+	        		 builder.and(
+	        				 builder.equal(root.get("userID"), userID), 
+	        				 builder.equal(root.get("data"), data)) );
+        
+	         Query<Spendtime> q=session.createQuery(query);	         
+	         ora = (ArrayList<Spendtime>) q.getResultList();
+	         System.out.println("**** SIZE:   " + ora.size());
+	        
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	         if (transaction != null) {
+	            transaction.rollback();
+	         }
+	      }
+		return ora;
+	}
+	
+	
+	//****************** UpdateOra ***********************
+	public static void updateOra(Integer userID, String data, Integer ora) {
+			session = DbManagerHibernate.getSessionFactory().openSession();
+			session.beginTransaction();
+			ArrayList<Spendtime> lista = selectUserIDandData(userID, data);
+			System.out.println(lista.size());
+			if(lista.get(0).equals(userID) && lista.get(1).equals(data)) {
+				spend.setOra(ora);
+				session.update(spend);
+				session.getTransaction().commit();
+				session.close();
+			}
+			System.out.println("sessione chiusa");
+	}
+	
+	public static void deletAll() {
+		session = DbManagerHibernate.getSessionFactory().openSession();
+		session.beginTransaction();
+		Spendtime sel = select().get(0);
+		System.out.println(sel);
+		session.delete(sel);
+		
+//		Query q1 = session.createQuery ("DELETE FROM Spendtime");
+//        q1.executeUpdate();
+		session.getTransaction().commit();
+		session.disconnect();
+		session.close();
+		System.out.println("TABELLA ELIMINATA");
+	}
+	
+	
+	public static void main(String[] args) throws Exception {
+//		insert(1, "01-02-2018", 6);
+//		insert(1, "02-02-2018", 4);
+//		insert(1, "03-02-2018", 8);
+//		
+//		insert(2, "01-02-2018", 3);
+//		insert(2, "02-02-2018", 2);
+//		insert(2, "03-02-2018", 4);
+//		
+//		insert(3, "01-02-2018", 3);
+//		insert(3, "02-02-2018", 2);
+//		insert(3, "03-02-2018", 4);
+		
+//		List <Spendtime> a = select();
+//		System.out.println("************** SELECT");
+//		for (Spendtime o : a) {
+//			System.out.println("ID: "+ o.getId() + " DATA: "+ o.getData()+ " ORA: " + o.getOra());
+//		}
+//		
+//		List<Integer> id = selectId();
+//		System.out.println("***************** SELECT ID");
+//		for (Integer sp : id) {
+//			System.out.println(sp.toString());
+//		}
+//		
+//		List<Spendtime>id2 = selectByUserID(1);
+//		System.out.println("******************* selectByUserID");
+//		for (Spendtime sp : id2) {
+//			System.out.println(sp.getData() + " " + sp.getOra());
+//		}
+		
+		ArrayList<Spendtime> IDeData = selectUserIDandData(1, "1-02-2018");
+		for (Spendtime o : IDeData) {
+			System.out.println(o.getUserID() + " " + o.getData());
+		}
+		
+		updateOra(1, "1-02-2018", 8);
+		//deletAll();
+	}
+	
+	
+	
+	
+	
+//*************************************  METODO VECCHIO *****************************************************
+//	private EntityManagerFactory emf;
+//	private EntityManager em;
+//	
+//	public TestHibrenate(String persistenceUnitName) {
+//		emf = Persistence.createEntityManagerFactory(persistenceUnitName);
+//		em = emf.createEntityManager();
+//	}
+//	
+//	public void insert(Object o) {
+//		em.getTransaction().begin();;
+//		em.persist(o);
+//		em.getTransaction().commit();
+//		em.close();
+//	}
+//	
+//	public static void main(String[] args) throws Exception {
+//	Spendtime sp = new Spendtime();
+//	sp.setId(1);
+//	sp.setData("20-02-2018");
+//	sp.setOra(8);
+//	TestHibrenate th = new TestHibrenate("SpendTimePersistence");
+//	th.insert(sp);
+//}
+	
+	
+	
+//	************************ METODO CHE UTILIZZA IL FILE XML *********************************
+//	private SessionFactory sessionFactory;
+//	
+//	protected void setUp() throws Exception {
+//		//Otteniamo una session Factory configurata tramite l'xml
+//		sessionFactory = new Configuration().configure().buildSessionFactory();
+//	}
+//	
+//	protected void shutDown() throws Exception {
+//		if(sessionFactory != null) {
+//			sessionFactory.close();
+//		}
+//	}
+//	
+//	public void test() {
+//		Spendtime sp = new Spendtime();
+//		sp.setId(1);
+//		sp.setData("20-02-2018");
+//		sp.setOra(8);
+//		//Inserisco gli elementi di spendTime nel db
+//		Session session = sessionFactory.openSession();
+//		session.beginTransaction();
+//		session.save(sp);
+//		session.getTransaction().commit();
+//		session.close();
+//	}
+//	
+
+	
+}

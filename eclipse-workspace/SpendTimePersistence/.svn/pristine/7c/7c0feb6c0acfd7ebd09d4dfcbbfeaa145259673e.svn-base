@@ -2,8 +2,6 @@ package db;
 
 import static org.junit.Assert.assertTrue;
 
-import java.sql.SQLException;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,10 +13,9 @@ public class SpendTimeDBManagerTest {
 		System.out.println("#########");
 		System.out.println("TEST SELECT");
 		System.out.println("#########");
-		SpendTimeDBManager spDB = new SpendTimeDBManager();
 		int size = 0;
 		try {
-			size = spDB.selectDb().size();
+			size = SpendTimeDBManager.selectDb().size();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -28,16 +25,15 @@ public class SpendTimeDBManagerTest {
 	
 	
 	@Test
-	public void test3() throws ClassNotFoundException, SQLException {
+	public void test3() throws Exception {
 		System.out.println("#########");
 		System.out.println("TEST UpdateTime");
 		System.out.println("#########");
-		SpendTimeDBManager spDB = new SpendTimeDBManager();
 		boolean prova = false;
 		int prima = SpendTimeDBManager.selectByOra("14-02-2018");
 		System.out.println("Ora precedente " + prima);
 		
-		spDB.updateDb("14-02-2018", 10);
+		SpendTimeDBManager.updateDb("14-02-2018", 10);
 		System.out.println("Update andato");
 		
 		int dopo = SpendTimeDBManager.selectByOra("14-02-2018");
@@ -57,10 +53,9 @@ public class SpendTimeDBManagerTest {
 		System.out.println("#########");
 		System.out.println("TEST PrePOPULATEDdb");
 		System.out.println("#########");
-		SpendTimeDBManager spDB = new SpendTimeDBManager();
 		int size = 0;
 		try {
-			size = spDB.getPrepopolatedValue().size();
+			size = SpendTimeDBManager.getPrepopolatedValue().size();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
@@ -76,10 +71,9 @@ public class SpendTimeDBManagerTest {
 	
 	@Before
 	public void insert() throws Exception {
-		SpendTimeDBManager sp = new SpendTimeDBManager();
 		int rows = 0;
-			sp.insertDb(1, "14-02-2018", 7);
-			if(sp.check == true) {
+		SpendTimeDBManager.insertDb(1, "14-02-2018", 7);
+			if(SpendTimeDBManager.check == true) {
 				rows = 1;
 			}
 		System.out.println("@Before --> inserted rows number: " + rows);

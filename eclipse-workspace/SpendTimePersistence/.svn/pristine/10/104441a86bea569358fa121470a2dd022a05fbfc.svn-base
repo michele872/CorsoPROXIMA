@@ -11,6 +11,8 @@ import java.util.HashMap;
 
 import org.apache.log4j.Logger;
 
+import commons.PropertiesManager;
+
 import utility.CurrentDate;
 
 
@@ -19,14 +21,43 @@ public class SpendTimeDBManager {
 	final static Logger logger = Logger.getLogger(SpendTimeDBManager.class);
 	
 	int giorno, ora;
-	public boolean check = false;;
+	public static boolean check = false;
+	protected static String dbUsername;
+	protected static String dbPassword;
+	//protected static String dbDialect;
+	protected static String connectorMainClass;
+	protected static String dbUrl;
 	
-	public void insertDb(int id, String giorno, int ora) throws ClassNotFoundException, SQLException {
-		String driver = "com.mysql.jdbc.Driver";
-		Class.forName(driver);
+	protected static Connection con;
+
+	static {
+		dbUsername = PropertiesManager.getPropertyAsString("database.username");
+		dbPassword = PropertiesManager.getPropertyAsString("database.password");
+		//dbDialect = PropertiesManager.getPropertyAsString("database.dialect");
+		dbUrl = PropertiesManager.getPropertyAsString("database.connection.url");
+		connectorMainClass = PropertiesManager.getPropertyAsString("database.connector.mainclass");
+		
+		logger.info("Properties loaded --> dbUsername: " + dbUsername + " - dbPassword: " + dbPassword + " - dbUrl: " + dbUrl + " - connectorMainClass: " + connectorMainClass);
+	}
+
+	public static void openConnection() throws Exception {
+		Class.forName(connectorMainClass);
+		con = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
+		logger.info("Connection opened successfully...");
+	}
+
+	public static void closeConnection() throws Exception {
+		try {
+			con.close();
+			logger.info("Connection closed successfully...");
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.error(e.getStackTrace());
+		}
+	}
 	
-		String url = "jdbc:mysql://localhost:3306/dipendenti";
-		Connection con = DriverManager.getConnection(url,"testuser","testuser");
+	public static void insertDb(int id, String giorno, int ora) throws Exception {
+		openConnection();
 		String query = "INSERT INTO spendtime (id, data, ora) VALUES (?,?,?)";
 		PreparedStatement ps  = con.prepareStatement(query);
 		ps.setInt(1, id);
@@ -40,14 +71,12 @@ public class SpendTimeDBManager {
 			}
 		// Se l'inserimento va a buon fine CHECK diventa true
 		check = true;
+		closeConnection();
 		}
 	
-	public static int selectByOra(String giorno) throws ClassNotFoundException, SQLException {
+	public static int selectByOra(String giorno) throws Exception {
 		int ora = 0;
-		String driver = "com.mysql.jdbc.Driver";
-		Class.forName(driver);		
-		String url = "jdbc:mysql://localhost:3306/dipendenti";
-		Connection con = DriverManager.getConnection(url,"testuser","testuser");
+		openConnection();
 		Statement cmd = con.createStatement();
 		
 		String query = "SELECT ora FROM spendtime WHERE data = "+" '"+giorno+"'";
@@ -59,28 +88,20 @@ public class SpendTimeDBManager {
 		return ora;
 	}
 	
-	public void updateDb(String giorno, int ora) throws ClassNotFoundException, SQLException {
-		//boolean verifica = false;
-		String driver = "com.mysql.jdbc.Driver";
-		Class.forName(driver);		
-		String url = "jdbc:mysql://localhost:3306/dipendenti";
-		Connection con = DriverManager.getConnection(url,"testuser","testuser");
-		//Statement cmd = con.createStatement();
-		
+	public static void updateDb(String giorno, int ora) throws Exception {
+		openConnection();
+
 		String query = "Update spendtime SET ora="+ora+" WHERE data= '"+giorno+"'";
 		PreparedStatement ps = con.prepareStatement(query);
 
 		ps.executeUpdate();
-		//verifica = true;
-		//return verifica;
+
+		closeConnection();
 	}
 	
-	public ArrayList<SpendTime> selectDb() throws ClassNotFoundException, SQLException {
+	public static ArrayList<SpendTime> selectDb() throws Exception {
 		ArrayList<SpendTime> dip = new ArrayList<SpendTime>();
-		String driver = "com.mysql.jdbc.Driver";
-		Class.forName(driver);		
-		String url = "jdbc:mysql://localhost:3306/dipendenti";
-		Connection con = DriverManager.getConnection(url,"testuser","testuser");
+		openConnection();
 		Statement cmd = con.createStatement();
 		
 		String query = "SELECT * FROM spendtime";
@@ -95,7 +116,7 @@ public class SpendTimeDBManager {
 	}
 	
 	
-	public HashMap<String, Integer> getPrepopolatedValue () throws ClassNotFoundException, SQLException {
+	public static HashMap<String, Integer> getPrepopolatedValue () throws Exception {
 		ArrayList<SpendTime> dip = selectDb();
 		HashMap<String, Integer> valori = new HashMap<String, Integer>();
 
@@ -103,7 +124,8 @@ public class SpendTimeDBManager {
 		int giorno = Integer.parseInt(CurrentDate.giornoCorrente());
 		if( sizeDip < giorno ) {
 			for(int i=sizeDip; i< giorno; i++ ) {
-				insertDb(dip.get(0).getId(), (i+1)+"-"+CurrentDate.dataCorrente(), 0);
+				if(!dip.isEmpty())
+					insertDb(dip.get(0).getId(), (i+1)+"-"+CurrentDate.dataCorrente(), 0);
 			}
 		}
 		dip = selectDb();
@@ -123,11 +145,7 @@ public class SpendTimeDBManager {
 		int rows = 0;
 
 		try {
-			String driver = "com.mysql.jdbc.Driver";
-			Class.forName(driver);
-		
-			String url = "jdbc:mysql://localhost:3306/dipendenti";
-			Connection con = DriverManager.getConnection(url,"testuser","testuser");
+			openConnection();
 			String query = "delete from spendtime;";
 			Statement cmd = con.createStatement();
 
