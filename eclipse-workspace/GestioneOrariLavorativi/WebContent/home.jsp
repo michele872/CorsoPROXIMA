@@ -1,8 +1,9 @@
-<%@page import="db.SpendTimeDBManager"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@ page import="org.entities.Spendtime" %>
 <%@ page import="utility.CurrentDate" %>
-<%@ page import="db.SpendTime" %>
+<%@ page import="db.HibernateDBManager" %>
 <%@ page import="utility.CurrentDate" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -47,12 +48,18 @@
           <table class="table table-striped">
 	<%
 		
+	int userID = 0;
 	int id = 1;
 	String meseAnno = CurrentDate.dataCorrente();
 	int giorno = Integer.parseInt(CurrentDate.giornoCorrente());
 	int orario;
 	String data = CurrentDate.data();
-	HashMap<String, Integer> o = SpendTimeDBManager.getPrepopolatedValue();
+	HashMap<String, Integer> o = HibernateDBManager.getPrepopolatedValue();
+	List<Spendtime> db = new ArrayList<Spendtime>();
+		db  = HibernateDBManager.select();
+	for(Spendtime h : db) {
+		userID = h.getUserID();
+	}
 	
 	
 	int contatore = 1;
@@ -71,6 +78,11 @@
 
             <tbody>          
           	<tr>
+<%--           	<td> <%  --%>
+// 			out.print("UserID <input type='hidden' value='"+userID+ "' /> ");
+// 			//out.print("Ore  Lavorate <input type='text' name='orario"+i+ "' value='0' style='width:40px;' >");
+<%-- 			%> --%>
+<!-- 			<td> -->
 			<td> <% 
 			out.print("Data <input type='text' name='giorno"+i+ "' value='"+String.valueOf(contatore)+"-"+meseAnno+"'  style='width:150px;' readonly='readonly' /> ");
 			//out.print("Ore  Lavorate <input type='text' name='orario"+i+ "' value='0' style='width:40px;' >");
