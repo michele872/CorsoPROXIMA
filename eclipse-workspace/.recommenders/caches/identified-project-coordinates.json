@@ -1,1 +1,1 @@
-[[{"location":"C:\\Program Files\\Java\\jdk1.8.0_151","type":"JRE","hints":{"EXECUTION_ENVIRONMENT":"J2SE-1.5"}},"jre:jre:1.5.0"],[{"location":"C:\\Users\\UTENTE8\\.m2\\repository\\org\\hibernate\\javax\\persistence\\hibernate-jpa-2.1-api\\1.0.0.Final\\hibernate-jpa-2.1-api-1.0.0.Final.jar","type":"JAR","hints":{}},"org.hibernate.javax:org.hibernate.javax.persistence.hibernate-jpa-2.1-api:1.0.0"]]
+[[{"location":"C:\\Program Files\\Apache TOMCAT\\apache-tomcat-8.5.27\\lib\\servlet-api.jar","type":"JAR","hints":{}},"ABSENT"]]

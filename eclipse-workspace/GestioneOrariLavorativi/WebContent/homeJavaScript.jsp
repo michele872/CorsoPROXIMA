@@ -14,7 +14,7 @@
 <title>HOME</title>
 </head>
 <body>
-
+WELCOME UTENTE 
 <script type="text/javascript">
 	function servl() {
 		console.log("LUCA TI ODIO");
@@ -23,12 +23,14 @@
 	}
 	
 	var spendTime = null ;
+
 	function executeListRequest() {
-		console.log("called executeListRequest");
+		console.log(spendTime);
+// 		console.log("called executeListRequest");
 		//1. create a new XMLHttpRequest object -- an object like any other!
 		var myRequest = new XMLHttpRequest();
 		// 2. open the request and pass the HTTP method name and the resource as parameters
-		myRequest.open('GET', 'FormOrari');
+		myRequest.open('POST', 'FormOrari');
 		// 3. write a function that runs anytime the state of the AJAX request changes
 		myRequest.onreadystatechange = function () { 
 		    // 4. check if the request has a readyState of 4, which indicates the server has responded (complete)
@@ -36,38 +38,65 @@
 		        // 5. insert the text sent by the server into the HTML of the 'ajax-content'
 		        //document.getElementById('ajax-content').innerHTML = myRequest.responseText;
 		        //
-		        console.log(myRequest.responseText)
+// 		        console.log(myRequest.responseText)
 	 	        spendTime=JSON.parse(myRequest.responseText);
 		
 		        initializeView() ;
 		    }
 		    
 		};
-		myRequest.send();
+		
+		if(spendTime != null) {
+			myRequest.send(JSON.stringify(spendTime));
+		} else {
+			myRequest.send();
+		}
 	}
 	
 		function initializeView() {
 //		 	console.log("INITIALIZE VIEW");
 			if (spendTime!=null) {
+				
 		        var spendTimeSize = spendTime.length;
 //		         console.log("usersSize: " + spendTimeSize);
 		        if (spendTimeSize>0) {
-		        	dynamicDiv="<ul>";
+		        	tab = "<table>";
 		        	for (var i=0;i<spendTimeSize; i++) {
+		     
+		        		tab += 
+		        		("<tr>"+
+		        		 "<td>"+"USER <input type='text' name='userID' value='" + spendTime[i].userID +"' style='width:30px;' readonly='readonly' />") + "&nbsp;" + "</td>" +
+		        		("<td>"+"Data <input type='text' name='giorno"+i+ "' value='"+spendTime[i].data+"'  style='width:90px;' readonly='readonly' />" + "</td>")+ "&nbsp;" + "</td>" +
+		        		("<td>"+"Ora <input type='text' name='"+i+ "' value='"+spendTime[i].ora+"'  style='width:30px;' onChange='cambioOra(this)' />" + "</td>"+"</tr>");
 		        		
-		        		dynamicDiv = dynamicDiv + ("<li>"+ spendTime[i].userID + "&nbsp;&nbsp;&nbsp;&nbsp;" +  spendTime[i].data + "&nbsp;&nbsp;&nbsp;&nbsp;" +  spendTime[i].ora + "</li>");
+		        		
+		        		//console.log("<input USER type='text' name='userID' value='" + spendTime[i].userID +"' />"); 
+		        		//console.log("Data <input type='text' name='giorno"+i+ "' value='"+spendTime[i].data+"'  style='width:150px;' readonly='readonly' /> ");
+		        		//dynamicDiv = dynamicDiv + ("<li>"+ spendTime[i].userID + "&nbsp;&nbsp;&nbsp;&nbsp;" +  spendTime[i].data + "&nbsp;&nbsp;&nbsp;&nbsp;" +  spendTime[i].ora + "</li>");
 			        }
-		        	dynamicDiv = dynamicDiv + "</ul>";
+		        	tab = tab + "</table>";
 		        }
-//		         console.log(dynamicDiv);
-		        document.getElementById("ser").innerHTML = dynamicDiv;
+		         console.log(tab);
+		         document.getElementById("ser").innerHTML = tab;
 		        
 		    }
+		}
+		
+		function cambioOra(valore) {
+			console.log("######################################################################################################");
+			console.log(valore.name + " " + valore.value);
+			console.log(parseInt(valore.name, 10));
+			console.log(spendTime);
+			var index = parseInt(valore.name, 10);
+			var valoreOra = parseInt(valore.value, 10);
+			spendTime[index].ora = valoreOra;
+			
+			console.log("######################################################################################################");
 		}
 
 </script>
 <form id="ser"></form>
-		<input  type="button" value="SO CAZZI" onclick="executeListRequest();"/>
+		<input  type="button" value="APRI REPORT" onclick="executeListRequest();"/>
 		
 </body>
 </html>
