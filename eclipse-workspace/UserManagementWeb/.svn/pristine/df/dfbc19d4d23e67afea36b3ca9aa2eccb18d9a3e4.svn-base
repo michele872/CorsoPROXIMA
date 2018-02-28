@@ -1,0 +1,10 @@
+upload.image.path=/profile/images
+#upload.image.path=C:\\profile\\images
+token.expirationtime=5
+
+#database.connection.url=jdbc:mysql://mercurio:3306/testDB
+#database.connector.mainclass=com.mysql.jdbc.Driver
+#database.username=test3
+#database.password=test3
+
+message.

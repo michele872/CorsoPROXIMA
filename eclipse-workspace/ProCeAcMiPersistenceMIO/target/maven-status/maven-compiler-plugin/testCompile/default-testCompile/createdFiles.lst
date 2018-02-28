@@ -1,0 +1,10 @@
+org\proxima\survey\db\SurveyUtilsTest.class
+org\db\UserDBManagerSelectAllTest.class
+org\db\UserDBManagerTest.class
+org\proxima\spendtime\db\HibernateTest.class
+org\proxima\spendtime\db\SpendTimeDBManagerInsertTest.class
+org\db\UserDBManagerBOUpdateTest.class
+org\proxima\spendtime\db\SpendTimeDBManagerTest.class
+org\db\UserDBManagerBOSelectAllTest.class
+org\db\UserLoginTokenDBManagerTest.class
+org\db\UserDBManagerSelectByEmailTest.class

@@ -1,0 +1,55 @@
+package servletusers;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.db.UserDBManager;
+
+
+/**
+ * Servlet implementation class UserDeleteOk
+ */
+@WebServlet("/UserDeleteOk")
+public class UserDeleteOk extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public UserDeleteOk() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		
+		String idUser=request.getParameter("id");
+		int id =Integer.parseInt(idUser);
+		System.out.println("sei su id " + id);
+		UserDBManager.deleteUserById(id);
+	
+        System.out.println("Cancellazione effettuata");
+		
+		
+		
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Proxima Centauri Milan Accademy - Welcome</title>
+<link rel="stylesheet" type="text/css" href="NewFile.css" />
+<style type="text/css">
+</style>
+<head>
+<title>FORM JAVASCRIPT LOGIN</title>
+<!-- Include CSS File Here -->
+<link rel="stylesheet" href="css/submit_javascript.css" />
+<!-- Include JS File Here -->
+<script>
+	//Submit form con la funzione id.
+	function submit_by_id() {
+		var email = document.getElementById("email").value;
+		var password = document.getElementById("password").value;
+
+		console.log(email + password);
+
+		if (validation()) // Calling validation function
+		{
+			executeLogin (email, password);	
+		}
+
+	}
+	
+	function executeLogin (email, password) {
+		console.log("called executeLogin");
+		//1. create a new XMLHttpRequest object -- an object like any other!
+		var myRequest = new XMLHttpRequest();
+		// 2. open the request and password the HTTP method name and the resource as parameters
+		myRequest.open('GET', 'LoginServlet?email='+email+"&password="+password);
+		// 3. write a function that runs anytime the state of the AJAX request changes
+		myRequest.onreadystatechange = function () { 
+		    // 4. check if the request has a readyState of 4, which indicates the server has responded (complete)
+		    console.log(myRequest.responseText);
+		    if (myRequest.readyState === 4) {
+		        // 5. insert the text sent by the server into the HTML of the 'ajax-content'
+		        //document.getElementById('ajax-content').innerHTML = myRequest.responseText;
+		        //
+		        console.log(myRequest.responseText);
+//	 	        users=JSON.parse("'"+myRequest.responseText+"'");
+// 		        users=JSON.parse(myRequest.responseText);
+// 		        console.log("users: " + users);
+// 		        initializeView () ;
+		    }
+		    
+		};
+		myRequest.send();
+		
+	}
+
+	//Funzione di Validazione Email e Password
+	function validation() {
+
+		var email = document.getElementById("email").value;
+		var password = document.getElementById("password").value;
+
+		if (email == '' || password == '') {
+			alert("I CAMPI NON SONO RIEMPITI CORRETTAMENTE. RIEMPI TUTTI I CAMPI.");
+			return false;
+		} else if (email.length > 24 || password.length > 15) {
+			
+			alert("UNO O TUTTI E DUE I CAMPI CONTENGONO UNA STRINGA TROPPO LUNGA. CONTROLLA I CAMPI");
+			return false;
+		} else {	
+			return true;		
+		}	
+	}
+</script>
+</head>
+<body>
+	<form method="post" name="form_name" id="form_id"
+		class="form_class">
+		<h2>PAGINA DI LOGIN</h2>
+		<label>Email :</label> <input type="text" name="email"
+			id="email" placeholder="mail@provider.dominio" /> <label>Password
+			:</label> <input type="text" name="password" id="password"
+			placeholder="pAssw0rd" /> <input type="button" name="submit_id"
+			id="btn_id" value="LOGIN" onclick="submit_by_id()" />
+	</form>
+	<a href="reg.jsp">REGISTRATI</a>
+</body>
+</html>
+

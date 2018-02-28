@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>ORARI INSERITI</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+<div class="alert alert-success">
+  <strong>Success!</strong> Inserimento effettuato. Clicca <a href="home.jsp" class="alert-link"> qui </a> per tornare al tuo report.
+</div>
+</body>
+</html>
