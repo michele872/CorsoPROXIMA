@@ -1,7 +1,6 @@
 package org.proxima.spendtime.db;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -11,13 +10,11 @@ import javax.persistence.criteria.Root;
 
 import org.apache.log4j.Logger;
 import org.db.DBManager;
-import org.entities.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-import org.proxima.spendtime.entities.SpendTime;
-import org.proxima.spendtime.entities.SpendTimeTip;
-import org.proxima.spendtime.spendtime.utils.CurrentDate;
+import org.proxima.spendtime.entities.Spendtime;
+import org.proxima.spendtime.entities.Spendtimetip;
 
 public class HibernateDBManager extends DBManager {
 	
@@ -25,16 +22,16 @@ public class HibernateDBManager extends DBManager {
 	final static Logger logger = Logger.getLogger(HibernateDBManager.class);
 	
 	//*********************** INSERT ********************
-	public static void insertSt(int userID, String data, int ora) {
+	public static void insertSt(int userID, String data, int ora, int tipoOre) {
 		Session session = getSessionFactory().openSession();
 		session.beginTransaction();
-		SpendTime spend = new SpendTime();
-		SpendTimeTip spt = new SpendTimeTip();
-		spt.setId(0);
+		Spendtime spend = new Spendtime();
+		Spendtimetip spt = new Spendtimetip();
+		spt.getIdSpt();
 		spend.setUserID(userID);
 		spend.setData(data);
 		spend.setOra(ora);
-		spend.setSpendtimetip(spt);
+		spend.setTipoOre(tipoOre);
 		session.save(spend);
 		session.getTransaction().commit();
 		 //Se l'inserimento va a buon fine CHECK diventa true
@@ -48,7 +45,7 @@ public class HibernateDBManager extends DBManager {
 	public static void insertStt(String label, String descrizione) {
 		Session session = getSessionFactory().openSession();
 		session.beginTransaction();
-		SpendTimeTip spt = new SpendTimeTip();
+		Spendtimetip spt = new Spendtimetip();
 		spt.setLabel(label);
 		spt.setDescrizione(descrizione);
 		session.save(spt);
@@ -61,17 +58,17 @@ public class HibernateDBManager extends DBManager {
 	
 	
 	//******************SELECT * FROM Spendtime;******************
-	public static List<SpendTime>  getAllSpendTimes() {
-		List<SpendTime> items=null;
+	public static List<Spendtime>  getAllSpendTimes() {
+		List<Spendtime> items=null;
 		 
 		 try {
 			 
 			 Session session = getSessionFactory().openSession();
 			    CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
-			    CriteriaQuery<SpendTime> criteriaQuery = criteriaBuilder.createQuery(SpendTime.class);
-			    Root<SpendTime> root = criteriaQuery.from(SpendTime.class);
+			    CriteriaQuery<Spendtime> criteriaQuery = criteriaBuilder.createQuery(Spendtime.class);
+			    Root<Spendtime> root = criteriaQuery.from(Spendtime.class);
 			    criteriaQuery.select(root);
-			    Query<SpendTime> query = session.createQuery(criteriaQuery);
+			    Query<Spendtime> query = session.createQuery(criteriaQuery);
 			    items = query.getResultList();
 		
 		    }catch (Exception e) {
@@ -81,17 +78,17 @@ public class HibernateDBManager extends DBManager {
 	}
 	
 //********************** SELECT from SpendTimeTip ******************	
-	public static List<SpendTimeTip> selectStt() {
-		List<SpendTimeTip> sp = null;
+	public static List<Spendtimetip> selectStt() {
+		List<Spendtimetip> sp = null;
 		
 		try {
 			
 		Session session = getSessionFactory().openSession();
 			CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
-		    CriteriaQuery<SpendTimeTip> criteriaQuery = criteriaBuilder.createQuery(SpendTimeTip.class);
-		    Root<SpendTimeTip> root = criteriaQuery.from(SpendTimeTip.class);
+		    CriteriaQuery<Spendtimetip> criteriaQuery = criteriaBuilder.createQuery(Spendtimetip.class);
+		    Root<Spendtimetip> root = criteriaQuery.from(Spendtimetip.class);
 		    criteriaQuery.select(root);
-		    Query<SpendTimeTip> query = session.createQuery(criteriaQuery);
+		    Query<Spendtimetip> query = session.createQuery(criteriaQuery);
 	    sp = query.getResultList();
 		}catch (Exception e) {
 		    logger.error(e.getStackTrace());
@@ -101,11 +98,11 @@ public class HibernateDBManager extends DBManager {
 	
 		
 //****************** SELECT id FROM Spendtime; ******************
-	public static SpendTime selectById(int id) {
+	public static Spendtime selectById(int id) {
 		Session session = getSessionFactory().openSession();
 //	    transaction = session.beginTransaction();
 	    
-		SpendTime spend = null;
+		Spendtime spend = null;
 	    
 //	    try {
 //	         CriteriaBuilder builder = session.getCriteriaBuilder();
@@ -116,7 +113,7 @@ public class HibernateDBManager extends DBManager {
 //	         Query<Integer> q=session.createQuery(query);
 //	         spend = q.getResultList();
 	         
-	         spend = session.get(SpendTime.class, id);
+	         spend = session.get(Spendtime.class, id);
 	         
 //	         for (Integer i : spend) {
 //	            System.out.println(i);
@@ -131,13 +128,13 @@ public class HibernateDBManager extends DBManager {
 		return spend;
 	}
 	
-	public static SpendTime selectByUserIdAndDate(int userId, String date) {
-		SpendTime stToReturn = null ;
+	public static Spendtime selectByUserIdAndDate(int userId, String date) {
+		Spendtime stToReturn = null ;
 		try {			 
 			 Session session = getSessionFactory().openSession();
 			 CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
-			 CriteriaQuery<SpendTime> criteriaQuery = criteriaBuilder.createQuery(SpendTime.class);
-			 Root<SpendTime> root = criteriaQuery.from(SpendTime.class);
+			 CriteriaQuery<Spendtime> criteriaQuery = criteriaBuilder.createQuery(Spendtime.class);
+			 Root<Spendtime> root = criteriaQuery.from(Spendtime.class);
 //			 criteriaQuery.select(root);			 
 			 List criteriaList = new ArrayList();
 
@@ -156,7 +153,7 @@ public class HibernateDBManager extends DBManager {
 			 
 			 criteriaQuery.where( criteriaBuilder.and( userIdAndDateFilter) );
 			 
-			 Query<SpendTime> query = session.createQuery(criteriaQuery);
+			 Query<Spendtime> query = session.createQuery(criteriaQuery);
 			 stToReturn = query.getSingleResult();
 	    } catch (Exception e) {
 	    	e.printStackTrace();
@@ -167,18 +164,18 @@ public class HibernateDBManager extends DBManager {
 	
 	
 	//****************** SELECT * FROM Spendtime WHERE ID = 1; ******************
-	public static List<SpendTime> selectByUserID(int userID) {
+	public static List<Spendtime> selectByUserID(int userID) {
 		Session session = getSessionFactory().openSession();
 		Transaction transaction = session.beginTransaction();
 	    
-	    List<SpendTime> byId = null;
+	    List<Spendtime> byId = null;
 	    
 	    try {
 	         CriteriaBuilder builder = session.getCriteriaBuilder();
-	         CriteriaQuery<SpendTime> query = builder.createQuery(SpendTime.class);
-	         Root<SpendTime> root = query.from(SpendTime.class);
+	         CriteriaQuery<Spendtime> query = builder.createQuery(Spendtime.class);
+	         Root<Spendtime> root = query.from(Spendtime.class);
 	         query.select(root).where(builder.equal(root.get("userID"), userID));
-	         Query<SpendTime> q=session.createQuery(query);
+	         Query<Spendtime> q=session.createQuery(query);
 	         byId = q.getResultList();
 	         System.out.println("**** SIZE:   " + byId.size());
 	         transaction.commit();
@@ -197,18 +194,18 @@ public class HibernateDBManager extends DBManager {
 		Session session = getSessionFactory().openSession();
 		Transaction transaction = session.beginTransaction();
 	    
-	    List<SpendTime> all = null;
+	    List<Spendtime> all = null;
 	    int ora = 0;
 	    try {
 	         CriteriaBuilder builder = session.getCriteriaBuilder();
-	         CriteriaQuery<SpendTime> query = builder.createQuery(SpendTime.class);
-	         Root<SpendTime> root = query.from(SpendTime.class);
+	         CriteriaQuery<Spendtime> query = builder.createQuery(Spendtime.class);
+	         Root<Spendtime> root = query.from(Spendtime.class);
 	         query.select(root).where(builder.equal(root.get("userID"), userID)); //, builder.equal(root.get("data"), data));	         
-	         Query<SpendTime> q=session.createQuery(query);	         
+	         Query<Spendtime> q=session.createQuery(query);	         
 	         all = q.getResultList();
 	         System.out.println("**** SIZE:   " + all.size());
 	         transaction.commit();
-	         for (SpendTime sp : all) {
+	         for (Spendtime sp : all) {
 				ora = sp.getOra();
 			}
 	      } catch (Exception e) {
@@ -226,9 +223,9 @@ public class HibernateDBManager extends DBManager {
 			Session session = getSessionFactory().openSession();
 			session.beginTransaction();
 
-			SpendTime sp = new SpendTime();
-			List<SpendTime> spend = getAllSpendTimes();
-			for (SpendTime s : spend) {
+			Spendtime sp = new Spendtime();
+			List<Spendtime> spend = getAllSpendTimes();
+			for (Spendtime s : spend) {
 				logger.debug("DATA "+s.getData().equals(data));
 				logger.debug(s.getUserID() == userID);
 				logger.debug(s.getUserID() == userID && s.getData().equals(data));
@@ -249,7 +246,7 @@ public class HibernateDBManager extends DBManager {
 	
 	
 	
-	//****************** DELETE ALL FROM SpendTime ***********************
+	//****************** DELETE ALL FROM Spendtime ***********************
 	public static int deletAll() {
 		Session session = getSessionFactory().openSession();
 		session.beginTransaction();
@@ -297,7 +294,7 @@ public class HibernateDBManager extends DBManager {
 //		insertSt(3, "01-02-2018", 3);
 //		insertSt(3, "02-02-2018", 2);
 		System.out.println("********************  LO FAI STO CAZZO DI INSERT **********");
-		insertSt(3, "03-02-2018", 4);
+		insertSt(3, "03-02-2018", 4,1);
 		System.out.println("********************  LO HAI FATTO STO CAZZO DI INSERT **********");
 //		List <SpendTime> a = getAllSpendTimes();
 //		System.out.println("************** SELECT");

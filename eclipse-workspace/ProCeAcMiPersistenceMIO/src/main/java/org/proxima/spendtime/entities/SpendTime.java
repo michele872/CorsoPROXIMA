@@ -2,6 +2,7 @@ package org.proxima.spendtime.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.List;
 
 
 /**
@@ -10,37 +11,44 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="spendtime")
-@NamedQuery(name="SpendTime.findAll", query="SELECT s FROM SpendTime s")
-public class SpendTime implements Serializable {
+@NamedQuery(name="Spendtime.findAll", query="SELECT s FROM Spendtime s")
+public class Spendtime implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="id")
-	private int id;
-	
-	@Column(name="data")
+	@Column(name="id_sp")
+	private int idSp;
+
 	private String data;
 
-	@Column(name="ora")
 	private int ora;
 
-	@Column(name="userID")
+	private int tipoOre;
+
 	private int userID;
 
-	//bi-directional many-to-one association to SpendTimeTip
-	@ManyToOne
-	@JoinColumn(name="tipoOre")
-	private SpendTimeTip spendtimetip;
+	//bi-directional many-to-many association to Spendtimetip
+	@ManyToMany
+	@JoinTable(
+		name="unionsp"
+		, joinColumns={
+			@JoinColumn(name="id_sp")
+			}
+		, inverseJoinColumns={
+			@JoinColumn(name="id_spt")
+			}
+		)
+	private List<Spendtimetip> spendtimetips;
 
-	public SpendTime() {
+	public Spendtime() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getIdSp() {
+		return this.idSp;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdSp(int idSp) {
+		this.idSp = idSp;
 	}
 
 	public String getData() {
@@ -59,6 +67,14 @@ public class SpendTime implements Serializable {
 		this.ora = ora;
 	}
 
+	public int getTipoOre() {
+		return this.tipoOre;
+	}
+
+	public void setTipoOre(int tipoOre) {
+		this.tipoOre = tipoOre;
+	}
+
 	public int getUserID() {
 		return this.userID;
 	}
@@ -67,12 +83,12 @@ public class SpendTime implements Serializable {
 		this.userID = userID;
 	}
 
-	public SpendTimeTip getSpendtimetip() {
-		return this.spendtimetip;
+	public List<Spendtimetip> getSpendtimetips() {
+		return this.spendtimetips;
 	}
 
-	public void setSpendtimetip(SpendTimeTip spendtimetip) {
-		this.spendtimetip = spendtimetip;
+	public void setSpendtimetips(List<Spendtimetip> spendtimetips) {
+		this.spendtimetips = spendtimetips;
 	}
 
 }

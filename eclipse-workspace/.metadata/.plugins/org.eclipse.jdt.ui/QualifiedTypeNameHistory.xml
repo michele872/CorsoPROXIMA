@@ -54,10 +54,10 @@
 <fullyQualifiedTypeName name="javax.persistence.FetchType"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.entities.Spendtimetip"/>
-<fullyQualifiedTypeName name="org.proxima.spendtime.entities.SpendTimeTip"/>
 <fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
 <fullyQualifiedTypeName name="org.hibernate.Hibernate"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="org.proxima.spendtime.db.HibernateDBManager"/>
 <fullyQualifiedTypeName name="org.proxima.spendtime.spendtime.utils.CurrentDate"/>
+<fullyQualifiedTypeName name="org.proxima.spendtime.entities.SpendTimeTip"/>
 </qualifiedTypeNameHistroy>

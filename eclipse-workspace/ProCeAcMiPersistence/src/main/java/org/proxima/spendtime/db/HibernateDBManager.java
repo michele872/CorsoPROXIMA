@@ -11,7 +11,6 @@ import javax.persistence.criteria.Root;
 
 import org.apache.log4j.Logger;
 import org.db.DBManager;
-import org.entities.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -20,25 +19,27 @@ import org.proxima.spendtime.entities.SpendTimeTip;
 import org.proxima.spendtime.spendtime.utils.CurrentDate;
 
 public class HibernateDBManager extends DBManager {
-	
-	public static boolean check = false;
+
 	final static Logger logger = Logger.getLogger(HibernateDBManager.class);
 	
 	//*********************** INSERT ********************
-	public static void insertSt(int userID, String data, int ora) {
+	public static void insertSt(int userID, String data, int ora, int type) {
 		Session session = getSessionFactory().openSession();
 		session.beginTransaction();
 		SpendTime spend = new SpendTime();
 		spend.setUserID(userID);
 		spend.setData(data);
 		spend.setOra(ora);
+		spend.setSpendtimetip(new SpendTimeTip(type));
 		session.save(spend);
 		session.getTransaction().commit();
-		 //Se l'inserimento va a buon fine CHECK diventa true
-		check = true;
 		session.close();
 		System.out.println("sessione chiusa");
 	}
+	
+//	public static void main(String[] args) throws Exception {
+//		insertSt(1, "2018xxxxx", 1, 1);
+//	}
 	
 	
 	//************** Insert in SPENDTIMETIPS **********
@@ -50,29 +51,12 @@ public class HibernateDBManager extends DBManager {
 		spt.setDescrizione(descrizione);
 		session.save(spt);
 		session.getTransaction().commit();
-		 //Se l'inserimento va a buon fine CHECK diventa true
-		check = true;
 		session.close();
 		System.out.println("sessione chiusa");
 	}
 	
 	
 	//******************SELECT * FROM Spendtime;******************
-//	public static List<SpendTime> selectSp() {
-//		Session session = getSessionFactory().openSession();
-//		Transaction transaction  = session.beginTransaction();
-//		List<SpendTime> sp = null;
-//		try {
-//			sp = session.createQuery("FROM Spendtime").list();
-//			transaction.commit();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		} finally {
-//			session.close();
-//		}
-//		return sp;		
-//	}
-//	
 	public static List<SpendTime>  getAllSpendTimes() {
 		List<SpendTime> items=null;
 		 
@@ -111,24 +95,6 @@ public class HibernateDBManager extends DBManager {
 	return sp;	
 	}
 	
-	
-	//********************** SELECT from SpendTimeTip ******************	
-//		public static List<Spendtime> selectJOIN() {
-//			Session session = getSessionFactory().openSession();
-//			Transaction transaction  = session.beginTransaction();
-//			String select = "FROM Spendtimetip INNER JOIN Spendtime ON Spendtimetip = Spendtime";
-//			List<Spendtime> spj = null;
-//			try {
-//				spj = session.createQuery(select).list();
-//				transaction.commit();
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			} finally {
-//				session.close();
-//			}
-//			return spj;		
-//		}
-		
 		
 //****************** SELECT id FROM Spendtime; ******************
 	public static SpendTime selectById(int id) {
@@ -286,7 +252,7 @@ public class HibernateDBManager extends DBManager {
 		if( sizeDip < giorno ) {
 			for(int i=sizeDip; i< giorno; i++ ) {
 				if(!dip.isEmpty())
-					insertSt(dip.get(0).getUserID(), (i+1)+"-"+CurrentDate.dataCorrente(), 0);
+					insertSt(dip.get(0).getUserID(), (i+1)+"-"+CurrentDate.dataCorrente(), 0, 1);
 			}
 		}
 		dip = getAllSpendTimes();
@@ -301,24 +267,7 @@ public class HibernateDBManager extends DBManager {
 		return valori;
 	} 
 	
-	
-	public static int deletAll() {
-		Session session = getSessionFactory().openSession();
-		session.beginTransaction();
-		
-		int rows = 0;
-//		System.out.println(		select().get(0));
-//		session.delete(select().get(0));
-		
-		Query q1 = session.createQuery ("DELETE FROM Spendtime");
-        rows = q1.executeUpdate();
-		session.getTransaction().commit();
-		session.disconnect();
-		session.close();
-		System.out.println("TABELLA ELIMINATA");
-		return rows;
-	}
-	
+	//****************** DeleteAll from SpendTIME ***********************
 	 public static int deleteAllSpendTime() {
 			
 			
@@ -333,8 +282,23 @@ public class HibernateDBManager extends DBManager {
 
 		}
 	
-	
-	public static void main(String[] args) throws Exception {
+	//****************** DeleteAll from SpendTIME ***********************
+		 public static int deleteAllSpendTimeTip() {
+				
+				
+				int rows = 0;
+				Session session = getSessionFactory().openSession();
+				session.beginTransaction();
+				rows = session.createQuery("delete from org.proxima.spendtime.entities.SpendTimeTip").executeUpdate();
+				session.getTransaction().commit();
+				
+				session.close();
+				return rows;
+
+			}
+	 
+	 
+	public static void main2(String[] args) throws Exception {
 		SpendTime test = selectByUserIdAndDate(0, "20-02-2018");
 		//System.out.println("test: " + test);
 		logger.debug("test: " + test);

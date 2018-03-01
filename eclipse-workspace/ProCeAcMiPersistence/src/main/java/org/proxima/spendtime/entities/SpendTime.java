@@ -30,6 +30,10 @@ public class SpendTime implements Serializable {
 
 	public SpendTime() {
 	}
+	
+	public SpendTime(int id) {
+		this.id = id;
+	}
 
 	public int getId() {
 		return this.id;

@@ -11,33 +11,31 @@ import java.util.List;
  */
 @Entity
 @Table(name="spendtimetips")
-@NamedQuery(name="SpendTimeTip.findAll", query="SELECT s FROM SpendTimeTip s")
-public class SpendTimeTip implements Serializable {
+@NamedQuery(name="Spendtimetip.findAll", query="SELECT s FROM Spendtimetip s")
+public class Spendtimetip implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="id")
-	private int id;
+	@Column(name="id_spt")
+	private int idSpt;
 
-	@Column(name="descrizione")
 	private String descrizione;
 
-	@Column(name="label")
 	private String label;
 
-	//bi-directional many-to-one association to SpendTime
-	@OneToMany(mappedBy="spendtimetip", fetch=FetchType.EAGER)
-	private List<SpendTime> spendtimes;
+	//bi-directional many-to-many association to Spendtime
+	@ManyToMany(mappedBy="spendtimetips")
+	private List<Spendtime> spendtimes;
 
-	public SpendTimeTip() {
+	public Spendtimetip() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getIdSpt() {
+		return this.idSpt;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdSpt(int idSpt) {
+		this.idSpt = idSpt;
 	}
 
 	public String getDescrizione() {
@@ -56,26 +54,12 @@ public class SpendTimeTip implements Serializable {
 		this.label = label;
 	}
 
-	public List<SpendTime> getSpendtimes() {
+	public List<Spendtime> getSpendtimes() {
 		return this.spendtimes;
 	}
 
-	public void setSpendtimes(List<SpendTime> spendtimes) {
+	public void setSpendtimes(List<Spendtime> spendtimes) {
 		this.spendtimes = spendtimes;
-	}
-
-	public SpendTime addSpendtime(SpendTime spendtime) {
-		getSpendtimes().add(spendtime);
-		spendtime.setSpendtimetip(this);
-
-		return spendtime;
-	}
-
-	public SpendTime removeSpendtime(SpendTime spendtime) {
-		getSpendtimes().remove(spendtime);
-		spendtime.setSpendtimetip(null);
-
-		return spendtime;
 	}
 
 }

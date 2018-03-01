@@ -47,11 +47,13 @@ public class FormOrari extends HttpServlet {
 		int userID = 0;
 		String giorno = " ";
 		int ora = 0;
+		int type = 0;
 		int max = Integer.parseInt(CurrentDate.giornoCorrente());
 		
 		if(lista.isEmpty()) {
+			
 			for(int i=0; i< max ; i++) {
-				logger.debug("SONO NEL PRIMO IF");
+				System.out.println("SONO NEL PRIMO IF");
 				logger.debug("CAZZO NON VA??");
 				
 				userID = 0;
@@ -63,7 +65,30 @@ public class FormOrari extends HttpServlet {
 				sp.setData(giorno);
 				sp.setOra(ora);
 				lista.add(sp);
-				HibernateDBManager.insertSt(userID, giorno, ora);
+				HibernateDBManager.insertSt(userID, giorno, ora, type);
+			}
+			
+			for (SpendTime x : lista) {
+				System.out.println(x.getData().substring(3, 9));
+				if (x.getData().substring(3, 9) != CurrentDate.dataCorrente()) {
+								
+					for(int i=0; i< max ; i++) {
+						logger.debug("SONO NEL PRIMO IF");
+						logger.debug("CAZZO NON VA??");
+						
+						userID = 0;
+						giorno = (i+1)+"-"+CurrentDate.dataCorrente();
+						logger.debug(giorno);
+						ora = 0;
+						
+						sp.setUserID(userID);
+						sp.setData(giorno);
+						sp.setOra(ora);
+						lista.add(sp);
+						HibernateDBManager.insertSt(userID, giorno, ora, type);
+					}
+					
+				}
 			}
 		} else {
 			// vado a leggere la lista dalla jsp (AJAX)
@@ -77,9 +102,9 @@ public class FormOrari extends HttpServlet {
 			int sizeLista = lista.size();
 			int giornoAttuale = Integer.parseInt(CurrentDate.giornoCorrente());
 			
-			if(lista.size() < giornoAttuale) {
+			if(sizeLista < giornoAttuale) {
 				for(int i=sizeLista; i<=giornoAttuale ; i++) {
-					HibernateDBManager.insertSt(0, giornoAttuale+"-"+CurrentDate.dataCorrente(), 0);
+					HibernateDBManager.insertSt(0, i+"-"+CurrentDate.dataCorrente(), 0, 0);
 				}
 			}
 			

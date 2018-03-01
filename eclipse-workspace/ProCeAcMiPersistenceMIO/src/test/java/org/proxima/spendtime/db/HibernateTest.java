@@ -73,7 +73,7 @@ public class HibernateTest {
 	@Before
 	public void insert() throws Exception {
 		int rows = 0;
-		HibernateDBManager.insertSt(1, "14-02-2018", 7);
+		HibernateDBManager.insertSt(1, "14-02-2018", 7, 4);
 			if(HibernateDBManager.check == true) {
 				rows = 1;
 			}
