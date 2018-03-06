@@ -2,6 +2,7 @@ C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\ProCeAcMiPersistence\src\main\ja
 C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\ProCeAcMiPersistence\src\main\java\org\db\UserLoginTokenDBManager.java
 C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\ProCeAcMiPersistence\src\main\java\org\proxima\spendtime\entities\SpendTimeTip.java
 C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\ProCeAcMiPersistence\src\main\java\org\proxima\survey\entities\Questionnaire.java
+C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\ProCeAcMiPersistence\src\main\java\org\proxima\survey\entities\SurveyTag.java
 C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\ProCeAcMiPersistence\src\main\java\org\bean\User.java
 C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\ProCeAcMiPersistence\src\main\java\org\proxima\survey\entities\Reply.java
 C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\ProCeAcMiPersistence\src\main\java\org\proxima\survey\entities\Survey.java
@@ -10,7 +11,10 @@ C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\ProCeAcMiPersistence\src\main\ja
 C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\ProCeAcMiPersistence\src\main\java\org\proxima\spendtime\spendtime\utils\CurrentDate.java
 C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\ProCeAcMiPersistence\src\main\java\org\db\UserDBManagerBO.java
 C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\ProCeAcMiPersistence\src\main\java\org\db\UserDBManager.java
-C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\ProCeAcMiPersistence\src\main\java\org\proxima\survey\db\SurveyUtils.java
+C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\ProCeAcMiPersistence\src\main\java\org\proxima\survey\db\SurveyDBManager.java
+C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\ProCeAcMiPersistence\src\main\java\org\proxima\survey\entities\SurveyCategory.java
+C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\ProCeAcMiPersistence\src\main\java\org\proxima\survey\db\SurveyCategoryDBManager.java
+C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\ProCeAcMiPersistence\src\main\java\org\proxima\survey\db\SurveyTagDBManager.java
 C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\ProCeAcMiPersistence\src\main\java\org\proxima\survey\db\HibernateUtil.java
 C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\ProCeAcMiPersistence\src\main\java\com\commons\PropertiesManager.java
 C:\Users\UTENTE8\CorsoPROXIMA\eclipse-workspace\ProCeAcMiPersistence\src\main\java\org\proxima\spendtime\entities\SpendTime.java

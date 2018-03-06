@@ -2,67 +2,66 @@ package org.proxima.survey.db;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
+import org.db.DBManager;
 import org.hibernate.Session;
 import org.proxima.survey.entities.Survey;
 
-public class SurveyUtils {
+public class SurveyDBManager extends DBManager {
+	
+	final static Logger logger = Logger.getLogger(SurveyDBManager.class);
 	
 	public static void main(String args[]) {
 		Survey s = new Survey();
 		s.setQuestion("ciao a tutti!");
 		s.setAnsa("e a te");
-		s.setCansa(true);
+		s.setCansa((byte)0);
 		/*insertSurvey(s);
 		System.out.println("ciaone 2222 " + s.getId());
 		
 		s.setQuestion("ciaone a te!");
 		updateSurvey(s);*/
-		List<Survey> results = selectAllSurveys();
+		List<Survey> results = selectAll();
 		for (Survey survey : results) {
 			System.out.println(survey.getId());
 		}
 	}
 	
-	/**
-	 * Utility method to retrieve the Hibernate session object 
-	 * @return
-	 */
-	private static Session getSession() {
-		return HibernateUtil.getSessionFactory().openSession();
-	}
 	
-	/**
-	 * Utility method to close the Hibernate session
-	 * @param session
-	 */
-	private static void closeSession(Session session) {
-		session.close();
-	}
+
 	
 	/**
 	 * Public method to insert a survey on Database
+	 * 
 	 * @param s
+	 * @return survey just inserted(with valid id) 
 	 */
-	public static int insertSurvey(Survey s) {
-		Session session = getSession();
+	public static Survey insert(Survey survey) {
+		logger.debug("SurveyDBManager.insert - START");
+		Session session = getSessionFactory().openSession();
 		session.beginTransaction();
-		session.save(s);
+		session.save(survey);
+//		session.persist(s);
 		session.getTransaction().commit();
-		closeSession(session);
-		return s.getId();
+		session.close();
+		logger.debug("SurveyDBManager.insert - DEBUG - survey: " + survey.getId());
+		return survey ;
+//		return s.getId();
 	}
 	
 	/**
 	 * Public method to update a survey on database
 	 * @param s
 	 */
-	public static void updateSurvey(Survey s) {
-		Session session = getSession();
+	public static Survey update(Survey s) {
+		Session session = getSessionFactory().openSession();
 		session.beginTransaction();
 		
-		session.update(s);
+//		session.update(s);
+		session.save(s);
 		session.getTransaction().commit();
-		closeSession(session);
+		session.close();
+		return s;
 	}
 	
 	/**
@@ -71,10 +70,11 @@ public class SurveyUtils {
 	 * @return
 	 */
 	public static Survey selectSurvey(int id) {
-		Session session = getSession();
-		session.beginTransaction();
-		Survey selection = session.get(Survey.class, id);
-		closeSession(session);
+		Session session = getSessionFactory().openSession();
+//		session.beginTransaction();
+		Survey selection = session.get(Survey.class, ""+id);
+//		closeSession(session);
+		session.close();
 		return selection;
 	}
 	
@@ -82,8 +82,8 @@ public class SurveyUtils {
 	 * Public method to select all the surveys present in the Database
 	 * @return
 	 */
-	public static List<Survey> selectAllSurveys() {
-		Session session = getSession();
+	public static List<Survey> selectAll() {
+		Session session = getSessionFactory().openSession();
 		session.beginTransaction();
 		@SuppressWarnings("unchecked")
 		List<Survey> surveysRes = session.createQuery("FROM Survey").list();
@@ -100,11 +100,23 @@ public class SurveyUtils {
 	 * @param id
 	 */
 	public static void delete(int id) {
-		Session session = getSession();
+		Session session = getSessionFactory().openSession();
 		session.beginTransaction();
 		Survey survey = session.get(Survey.class, id);
 		session.delete(survey);
 		session.getTransaction().commit();
+	}
+	
+    public static void deleteAll() {
+		
+		
+		Session session = getSessionFactory().openSession();
+		session.beginTransaction();
+		session.createQuery("delete from org.proxima.survey.entities.Survey").executeUpdate();
+		session.getTransaction().commit();
+		
+		session.close();
+
 	}
 
 }

@@ -10,6 +10,9 @@
     <mapping class="org.proxima.survey.entities.Survey"/>
     <mapping class="org.proxima.spendtime.entities.SpendTime"/>
     <mapping class="org.proxima.spendtime.entities.SpendTimeTip"/>
+    <mapping class="org.proxima.survey.entities.SurveyCategory"/>
+    <mapping class="org.proxima.survey.entities.Survey"/>
+    <mapping class="org.proxima.survey.entities.SurveyTag"/>
     
   </session-factory>
   
