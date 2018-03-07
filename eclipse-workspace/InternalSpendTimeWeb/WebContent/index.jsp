@@ -166,13 +166,15 @@ WELCOME UTENTE <%=(currentUser.getFirstname() + " " + currentUser.getLastname())
 		    return new Date(y, 0, d);
 		}
 		
-		var currentYear = 2018;
-		var currentWeek = 09 ;
+		var data = new Date();
+		var currentYear = data.getFullYear();
+		var currentWeek = data.getMonth();
 		var firstDayOfTheWeek = getDateOfWeek(currentWeek, currentYear);
 		var currentRowId;
 		
 		function initializeWeek () {
 // 			var firstDayOfTheWeek = getDateOfWeek(09, 2018);
+// 			console.log currentWeek;
 			firstDayOfTheWeek = getDateOfWeek(currentWeek, currentYear);
 			var htmlContent = "<form id='spendTimeForm' action='submitSpendTime()' ><table id='stiCazzi'>" ;
 			var currentDayOfWeek = firstDayOfTheWeek ;
