@@ -222,17 +222,30 @@ WELCOME UTENTE <%=(currentUser.getFirstname() + " " + currentUser.getLastname())
 // 					console.log("submitted!!!!");
 		}
 
+		var contatore = 1;
 		function minusWeek () {
 			console.log("currentWeek: " + currentWeek);
-			currentWeek--;
-			console.log("currentWeek2: " + currentWeek);
-			initializeWeek ();
+			if (contatore < 5) {
+				currentWeek--;
+				contatore++;
+				console.log("currentWeek2: " + currentWeek);
+				initializeWeek ();
+			} else {
+				contatore=1;
+				return;
+			}
 		}
 		function plusWeek () {
 			console.log("currentWeek: " + currentWeek);
-			currentWeek++;
-			console.log("currentWeek2: " + currentWeek);
-			initializeWeek ();
+			if (contatore < 5) {
+				currentWeek++;
+				contatore++;
+				console.log("currentWeek2: " + currentWeek);
+				initializeWeek ();
+			} else {
+				contatore=1;
+				return;
+			}
 		}
 		
 		function convertToTable(el, numberOfColumns, columnNames) {
