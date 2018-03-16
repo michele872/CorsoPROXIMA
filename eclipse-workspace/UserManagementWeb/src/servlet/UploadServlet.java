@@ -37,7 +37,7 @@ public class UploadServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, java.io.IOException {
 		
-		filePath = PropertiesManager.getAppPropertyAsString("upload.image.path");
+		filePath = PropertiesManager.getPropertyAsString("upload.image.path");
 
 		// Check that we have a file upload request
 		isMultipart = ServletFileUpload.isMultipartContent(request);

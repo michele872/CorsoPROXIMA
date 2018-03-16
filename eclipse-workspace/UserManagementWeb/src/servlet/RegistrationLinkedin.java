@@ -141,7 +141,7 @@ public class RegistrationLinkedin extends HttpServlet {
 		
 		byte[] imageBytes = out.toByteArray();
 		
-		String filePath = PropertiesManager.getAppPropertyAsString("upload.image.path");
+		String filePath = PropertiesManager.getPropertyAsString("upload.image.path");
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
 		String fileName = name + LocalDateTime.now().format(formatter) + ".png";
 		
