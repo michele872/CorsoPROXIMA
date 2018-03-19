@@ -1,56 +1,54 @@
+/* .label { */
+/* 	font-size: 150%;	 */
+/* }	 */
 
 .page-header {
 /* 	text-align: center; */
+	margin-top: 0px;
     background-color: #000000;
     overflow: hidden;
-}
-
-.page-header{
-	float: right;
-/* 	margin-top: 0.5%; */
- 	text-align: left;
-    padding: 5px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-/* Style the links inside the navigation bar */
-.page-header{
-    float: left;
-    margin-top: 0.0%;
-    color: #f2f2f2;
-     text-align: left;
-    padding: 5px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-
-
-/* Change the color of links on hover */
-.page-header:hover {
-    background-color: #000000;
-    color: #7F0000;
-    -webkit-transition: color 0.5s;
-    -moz-transition:    color 0.5s;
-    -ms-transition:     color 0.5s;
-    -o-transition:      color 0.5s;
-    transition:         color 0.5s;
-}
-
-/* Add a color to the active/current link */
-.page-header {
-    background-color: black;
-    color: white;
-}
-
-/* Hide the link that should open and close the topnav on small screens */
-.page-header {
-    display: none;
-}
-
-.page-header {
     float: none;
-    display: block;
+    display: in-lineblock;
     text-align: left;
 }
+
+.collapse {
+	float: right;
+    display: inline-block;
+    text-align: left;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+.navbar-nav, ul {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+
+#bs-example-navbar-collapse-1 ul > li > a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 20px 30px;
+    color: #fff;
+}
+
+#bs-example-navbar-collapse-1 ul > li > a:hover, #bs-example-navbar-collapse-1 ul > li > a:active {
+/* 	font-size: 120%; */
+    color: #7F0000; 
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+

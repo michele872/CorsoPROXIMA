@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.hibernate.annotations.common.util.impl.LoggerFactory"/>
 <fullyQualifiedTypeName name="org.proxima.repository.UserJpaRepository"/>
 <fullyQualifiedTypeName name="org.slf4j.Logger"/>
 <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="org.proxima.cc.entities.BitcoinHistorical"/>
 <fullyQualifiedTypeName name="org.proxima.cc.entities.LitecoinHistorical"/>
 <fullyQualifiedTypeName name="org.proxima.cc.entities.EthereumHistorical"/>
+<fullyQualifiedTypeName name="org.proxima.cc.clients.CryptoCoinJSONInterface"/>
 </qualifiedTypeNameHistroy>
