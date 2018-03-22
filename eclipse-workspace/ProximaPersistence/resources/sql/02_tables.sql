@@ -49,7 +49,7 @@ create table question (
 	CANSE BIT(1),
 	CANSF BIT(1)
 );
-
+INSERT INTO `proceacmi_dev`.`question` (label,description, ANSA, ANSB, ANSC,ANSD,ANSE,ANSF, CANSA,CANSB,CANSC,CANSD,CANSE,CANSF) VALUES ('LUCA HAI ROTTO','Lettera dell''alfabeto', 'a', 'b','c', 'd', 'e', 'f',0,0,0,0,0,0);
 
 CREATE TABLE questioncategory(
 	id bigint primary key not null auto_increment,

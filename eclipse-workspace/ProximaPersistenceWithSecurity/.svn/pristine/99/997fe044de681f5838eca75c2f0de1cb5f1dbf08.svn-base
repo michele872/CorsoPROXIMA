@@ -1,0 +1,66 @@
+
+<div class="container">  
+    <div class="panel panel-default "> 
+    <div class="alert alert-success">
+        <span class="lead"> Values in Real Time </span> 
+    </div>        
+<div class="container">
+	<div class="table-responsive">
+		<table class="table table-hover table-bordered ">
+			<thead>
+				<tr ng-repeat="provider in lastvalues">
+<!--                     <tr> -->
+					<th>{{provider.providerSite}}</th>
+					<th>{{provider.exchangevalue}} {{provider.currencyLabel}}</th>
+					<th>{{provider.exchangetime}}</th></tr>
+					
+					</tr>
+<!-- 					<tr> -->
+<!-- 					<th>{{lastvalues2.providerSite}}</th> -->
+<!-- 					<th>{{lastvalues2.exchangevalue}} {{lastvalues2.currencyLabel}}</th> -->
+<!-- 					<th>{{lastvalues2.exchangetime}}</th> -->
+					
+<!-- 				</tr><tr> -->
+<!-- 					<th>{{lastvalues3.providerSite}}</th> -->
+<!-- 					<th>{{lastvalues3.exchangevalue}} {{lastvalues3.currencyLabel}}</th> -->
+<!-- 					<th>{{lastvalues3.exchangetime}}</th> -->
+<!-- 					</tr><tr> -->
+<!-- 					<th>{{lastvalues4.providerSite}}</th> -->
+<!-- 					<th>{{lastvalues4.exchangevalue}} {{lastvalues4.currencyLabel}}</th> -->
+<!-- 					<th>{{lastvalues4.exchangetime}}</th> -->
+<!-- 				</tr><tr> -->
+<!-- 					<th>{{lastvalues5.providerSite}}</th> -->
+<!-- 					<th>{{lastvalues5.exchangevalue}} {{lastvalues5.currencyLabel}}</th> -->
+<!-- 					<th>{{lastvalues5.exchangetime}}</th> -->
+				<tbody>                          
+             
+     
+        </tbody>
+        </table>
+    </div>
+    </div>
+    </div>
+    
+	<div class="panel panel-default ">
+					<div class="alert alert-success">
+			<span class="lead"> Proxima Crypto Charts </span>
+		</div>
+
+		<div>
+			<div class="container" id="daydiv">
+			    <canvas id="daily"></canvas>
+			</div>
+			<div class="container" id="weekdiv">
+			    <canvas id="weekly"></canvas>
+			</div>
+			<div class="container" id="monthdiv">
+			    <canvas id="monthly"></canvas>
+			</div>
+			<div class="container" id="yeardiv">
+			    <canvas id="yearly"></canvas>
+			</div>
+		</div>
+
+	</div>
+
+			</div>
